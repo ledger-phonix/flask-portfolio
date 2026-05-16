@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Allow: /static/
+
+# If you have an admin or login portal in your Flask app, hide it from search engines:
+Disallow: /admin/
+Disallow: /login/
