@@ -21,4 +21,4 @@ COPY . /app/
 EXPOSE 5000
 
 # Step 8: Define the command to run your app using Gunicorn (Production Server)
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:run"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "run:app"]
