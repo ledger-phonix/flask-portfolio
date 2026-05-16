@@ -1,0 +1,70 @@
+{% extends "main/base.html" %}
+{% block title %}Submit Testimonial{% endblock %}
+
+{% block content %}
+<section id="testimonial" class="py-16 bg-[var(--bg)] min-h-screen">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-8  text-center text-[var(--text)]">Submit Your Testimonial</h2>
+        
+        <div class="bg-[var(--card)] p-8 rounded-lg border border-[var(--border)]">
+            <form action="{{ url_for('main.testimonial') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
+                
+                <div>
+                    <label for="name" class="block text-sm font-medium mb-1 text-[var(--text)]">
+                        Name <span class="text-red-500 font-bold">*</span>
+                    </label>
+                    <input type="text" id="name" placeholder="Ahmed Raza, Fellow Developer" name="name" required 
+                           class="form-input w-full px-4 py-2 rounded-md bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] focus:ring-2 focus:ring-[var(--button)] outline-none">
+                </div>
+
+                <div>
+                    <label for="title" class="block text-sm font-medium mb-1 text-[var(--text)]">
+                        Title <span class="text-red-500 font-bold">*</span> (e.g., Good Experience)
+                    </label>
+                    <input type="text" id="title" placeholder='The "Reliable Developer" (Peer/Client)' name="title" required 
+                           class="form-input w-full px-4 py-2 rounded-md bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] focus:ring-2 focus:ring-[var(--button)] outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-2 text-[var(--text)]">
+                        Rating <span class="text-red-500 font-bold">*</span>
+                    </label>
+                    <div class="star-rating flex gap-2 text-3xl">
+                        <i class="fa-regular fa-star cursor-pointer star" data-value="1"></i>
+                        <i class="fa-regular fa-star cursor-pointer star" data-value="2"></i>
+                        <i class="fa-regular fa-star cursor-pointer star" data-value="3"></i>
+                        <i class="fa-regular fa-star cursor-pointer star" data-value="4"></i>
+                        <i class="fa-regular fa-star cursor-pointer star" data-value="5"></i>
+                    </div>
+                    <input type="hidden" name="stars" id="stars-input" value="0" required>
+                </div>
+
+                <div>
+                    <label for="description" class="block text-sm font-medium mb-1 text-[var(--text)]">
+                        Description <span class="text-red-500 font-bold">*</span>
+                    </label>
+                    <textarea id="description" name="description" placeholder="I worked with Talha on a web project....." rows="4" required 
+                              class="form-input w-full px-4 py-2 rounded-md bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] focus:ring-2 focus:ring-[var(--button)] outline-none"></textarea>
+                </div>
+
+                <div>
+                    <label for="linkedin" class="block text-sm font-medium mb-1 text-[var(--text)]">LinkedIn Profile (Optional)</label>
+                    <input type="url" id="linkedin" name="linkedin" 
+                           class="form-input w-full px-4 py-2 rounded-md bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] focus:ring-2 focus:ring-[var(--button)] outline-none" placeholder="https://linkedin.com/in/...">
+                </div>
+
+                <div>
+                    <label for="picture" class="block text-sm font-medium mb-1 text-[var(--text)]">Your Picture (Optional)</label>
+                    <input type="file" id="picture" name="picture" accept="image/*"
+                           class="w-full text-sm text-[var(--muted)] file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-[var(--button)] file:text-white hover:file:bg-[var(--button-hover)]">
+                </div>
+
+                <button type="submit" class="w-full bg-[var(--button)] text-white px-6 py-3 rounded-md font-bold hover:bg-[var(--button-hover)] transition-all duration-300 shadow-lg">
+                    Submit Testimonial
+                </button>
+
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

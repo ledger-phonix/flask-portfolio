@@ -1,0 +1,90 @@
+import cloudinary.uploader
+from flask import render_template , Blueprint, request, flash, redirect, url_for
+from .mail_utils import send_email
+from .database import db_handler
+
+main = Blueprint('main',__name__)
+
+@main.route('/')
+def index():
+    certificates = db_handler.get_all_certificates()
+    testimonials = db_handler.get_active_testimonials()
+     
+    return render_template('main/index.html', all_certificates = certificates , active_testimonials = testimonials)
+
+@main.route('/contact', methods = ['GET','POST'])
+def contact():
+    if request.method== 'POST':
+        
+        user_data = {
+            'user_name' : request.form['name'],
+            'user_email' : request.form['email'],
+            'user_subject' : request.form['subject'],
+            'user_message' : request.form['message']
+        }
+        
+        try:
+            send_email(user_data)
+            flash(f'Thanks {user_data["user_name"]}! Your message has been sent successfully', 'success')
+        except Exception as e:
+            print(repr(e))
+            flash('Email failed to sent!', 'error') 
+     
+        return redirect(url_for('main.contact'))
+    return render_template('main/contact.html')
+
+@main.route('/testimonial', methods = ['GET', 'POST'] )
+def testimonial():
+    if request.method == 'POST':
+        file_to_upload = request.files['picture']
+        image_url = ""
+       
+        if file_to_upload:
+            try:
+                upload = cloudinary.uploader.upload(file_to_upload, folder = 'clients')
+                image_url = upload.get('secure_url')
+            except Exception as e:
+                flash('Upload Failed!', 'error')    
+        testimonial_data = {
+            't_name': request.form['name'],
+            't_title': request.form['title'],
+            't_stars': int(request.form['stars']),
+            't_text': request.form['description'],
+            't_linkedin': request.form['linkedin'],
+            't_image': image_url,
+            't_display' : False
+        }
+        try:
+            db_handler.save_testimonials(testimonial_data)
+            flash('Testimonial saved successfully!', 'success')
+        except Exception as e:
+            flash(f"Error: {e}!!", "error")
+        
+        return redirect(url_for('main.testimonial'))
+    return render_template('main/testimonial.html')
+
+@main.route('/subscribe', methods = ['POST'])
+def subscribe():
+    email = request.form['email']
+    if email:
+        try:
+            #check if the email is already avaiable
+            existing = db_handler.subscribers.find_one({"email" : email })
+            if existing:
+                flash("You already subscribed!", "Info")
+            else:
+                db_handler.save_email(email)
+                flash("Thanks for subscribing!", 'success')
+        except Exception as e:
+            flash(f"Subscription failed! {e}")
+    return redirect(request.referrer or url_for('main.index'))  
+             
+@main.route('/projects')
+def projects():
+    projects = db_handler.get_all_projects()
+    # print(projects)
+    return render_template('main/projects.html', all_projects = projects)
+
+@main.route('/blog')
+def blog():
+    return render_template('main/blog.html')

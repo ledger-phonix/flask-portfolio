@@ -1,0 +1,503 @@
+:root {
+  --bg: #eef2ff;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #4b5563;
+  --border: #dbe4ff;
+  --button: #6366f1;
+  --button-hover: #4f46e5;
+  --accent: #818cf8;
+  --shadow: 0 10px 25px rgba(67, 56, 202, 0.08);
+  /* Softer light shadow */
+  --tag-bg: rgba(99, 102, 241, 0.1);
+  --nav-bg: rgba(255, 255, 255, 0.76);
+  --nav-border: rgba(99, 102, 241, 0.25);
+}
+
+[data-theme="dark"] {
+  --bg: #111827;
+  --card: #1f2937;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: #374151;
+  --button: #8b5cf6;
+  --button-hover: #7c3aed;
+  --accent: #a78bfa;
+  --shadow: 0 10px 30px rgba(167, 139, 250, 0.15);
+  --tag-bg: rgba(167, 139, 250, 0.15);
+  --nav-bg: rgba(17, 24, 39, 0.80);
+  --nav-border: rgba(139, 92, 246, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* body {
+  padding-top: 65px;
+} */
+
+body,
+nav {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Smooth line animation on nav links */
+.nav-link {
+  position: relative;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--button);
+}
+
+.nav-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0.75rem;
+  right: 0.75rem;
+  height: 2px;
+  background-color: var(--button);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover .nav-underline {
+  transform: scaleX(1);
+}
+
+/* Theme Toggle Button - Clean Professional Style */
+#theme-toggle {
+  position: relative;
+  background-color: #e5e7eb;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.4rem;
+  z-index: 10;
+}
+
+html[data-theme="dark"] #theme-toggle {
+  background-color: #4b5563;
+}
+
+.toggle-slider {
+  position: absolute;
+  left: 0.4rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 5;
+}
+
+#theme-toggle.active .toggle-slider {
+  transform: translateX(1.75rem);
+}
+
+#theme-toggle i {
+  position: relative;
+  z-index: 0;
+  font-size: 0.75rem;
+}
+
+#theme-toggle.active .toggle-slider {
+  transform: translateX(1.5rem);
+}
+
+/* Mobile Menu */
+#mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg);
+  z-index: 40;
+  transform: translateX(-100%);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow-y: auto;
+  padding-top: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#mobile-menu.open {
+  transform: translateX(0);
+}
+
+/* Hamburger menu button */
+#hamburger {
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+/* Professional Social Icons - Simple */
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--button);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--button-hover);
+  transform: scale(1.1);
+}
+
+.popup-action {
+  width: 2.2rem;
+  height: 2.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid var(--button);
+  color: var(--button);
+  transition: all 0.25s ease;
+}
+
+.popup-action:hover {
+  background-color: var(--button);
+  color: white;
+  border-color: var(--button-hover);
+  transform: translateY(-1px);
+}
+
+.contact-row:hover {
+  background-color: transparent;
+  color: inherit;
+}
+
+/* Animated profession text (from bottom, slow) */
+/* Container holds a stable height to prevent layout shifts */
+/* .profession-container {
+  overflow: hidden;
+  height: 3rem;
+  display: flex;
+  align-items: flex-end;
+} */
+
+@media (min-width: 640px) {
+  .profession-container {
+    height: 4rem;
+  }
+}
+
+/* Updated for typewriter effect */
+/* Container: Keeps it inline but removes the artificial vertical gap */
+.profession-container {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  display: inline-flex;
+  /* Use inline-flex so it only takes up the text's exact height */
+  align-items: center;
+}
+
+/* We completely remove the old height rules:
+  .profession-container { height: 3rem; }
+  @media (min-width: 640px) { .profession-container { height: 4rem; } }
+*/
+
+/* Reset your typewriter span to keep it perfectly aligned */
+.profession-text {
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 1.1;
+  /* Controls the exact vertical box size */
+
+  /* Reset any transformations */
+  transform: none;
+  opacity: 1;
+
+  /* Your cursor styling */
+  padding-right: 12px;
+  border-right: 3px solid var(--button);
+  animation: blink-cursor 0.8s step-end infinite;
+}
+
+/* Blinking bar logic */
+@keyframes blink-cursor {
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: var(--button);
+  }
+}
+
+/* Hero Background Canvas + Theme-Adaptive Gradient */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgba(124, 58, 237, 0.2) 0%, rgba(124, 58, 237, 0.08) 35%, rgba(236, 233, 255, 0.0) 100%);
+}
+
+[data-theme="dark"] .hero {
+  background: linear-gradient(145deg, rgba(124, 58, 237, 0.35) 0%, rgba(95, 46, 236, 0.22) 40%, rgba(17, 24, 39, 0.7) 100%);
+}
+
+#hero-dots-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(circle at top left, rgba(124, 58, 237, 0.22), transparent 60%);
+  pointer-events: none;
+}
+
+.hero>.max-w-7xl {
+  position: relative;
+  z-index: 3;
+}
+
+@media (max-width: 768px) {
+  #hero-dots-canvas {
+    opacity: 0.65;
+  }
+
+  .hero-gradient {
+    background: radial-gradient(circle at top left, rgba(124, 58, 237, 0.14), transparent 62%);
+  }
+}
+/* Display the visual by default on larger screens */
+.hide-hero-img {
+  display: flex;
+}
+
+/* Hide the picture and shapes exactly below 645px */
+@media (max-width: 645px) {
+  .hide-hero-img {
+    display: none !important;
+  }
+}
+/* At 645px and below, hide the image and let text expand fully */
+@media (max-width: 645px) {
+    /* 1. Force the grid to act as a single full-width column */
+    .hero .grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* 2. Make the text content stretch across the entire screen */
+    .hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: left !important; /* Forces it to stay left-aligned */
+    }
+
+    /* 3. Ensure the button flex stays aligned to the left */
+    .hero-content .flex {
+        justify-content: flex-start !important;
+    }
+    /* 4. Increase font sizes for the full-screen layout */
+    .hero-content p {
+        font-size: 0.95rem !important; /* Slightly larger "Hello, I'm" */
+        letter-spacing: 0.05em;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem !important; /* Bold, clear name size for full width */
+        line-height: 1.15 !important;
+        margin-top: 0.25rem;
+    }
+
+    .profession-text {
+        font-size: 2rem !important; /* Larger typewriter text */
+    }
+}
+/* About Section */
+.about {
+  background: var(--bg);
+}
+
+.about-content,
+.about-image {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about-content.animate,
+.about-image.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-image {
+  transition-delay: 0.2s;
+}
+
+/* Heading with double lines */
+.heading-with-lines {
+  position: relative;
+  display: inline-block;
+}
+
+/* Technical Stack Cards */
+.technical-stack {
+  background: var(--bg);
+}
+
+.stack-card {
+  background: var(--card);
+  border: 1px solid rgba(124, 58, 237, 0.24);
+  border-radius: 14px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.08);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  color: var(--text);
+  min-height: 136px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stack-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(124, 58, 237, 0.45);
+  box-shadow: 0 16px 32px rgba(124, 58, 237, 0.16);
+}
+
+.stack-card i {
+  color: var(--button);
+  transition: color 0.2s ease;
+}
+
+.stack-card strong {
+  display: block;
+  margin-top: 0.6rem;
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
+}
+
+.stack-card p {
+  font-size: 0.84rem;
+  margin: 0;
+  color: var(--muted);
+}
+
+.stack-card.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.stack-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.heading-with-lines::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, var(--button), var(--accent));
+  border-radius: 2px;
+}
+
+.heading-with-lines::before {
+  content: '';
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 4px;
+  background: var(--button);
+  border-radius: 2px;
+}
+
+/* Star Rating Colors */
+.star-rating .fa-star {
+  color: var(--muted);
+  transition: color 0.2s, transform 0.2s;
+}
+
+.star-rating .fa-star.active,
+.star-rating .fa-star:hover {
+  color: #fbbf24;
+  /* Golden color for stars */
+  transform: scale(1.1);
+}
+
+.star-rating .fa-star.selected {
+  color: #f59e0b;
+  /* Slightly darker gold for selected */
+}
+
+
+
+/* Ensure inputs match the theme text color */
+.form-input::placeholder {
+  color: var(--muted);
+  opacity: 0.6;
+}
+
+/* Contact Form Enhancements */
+.contact-input {
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Ensure the dropdown arrow looks okay in dark mode */
+select.contact-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+[data-theme="dark"] .contact-input:focus {
+  border-color: var(--button);
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+/* Glassmorphism & Animations */
+.flash-message {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: 0.8s ease;
+}

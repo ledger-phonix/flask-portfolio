@@ -1,0 +1,70 @@
+{% extends 'admin/admin_base.html' %}
+{% block admin_content %}
+<div class="p-6">
+    <h1 class="text-3xl font-black text-[var(--text)] mb-2">Testimonials Management</h1>
+    <p class="text-[var(--muted)] mb-8">Control which testimonials are visible on your public portfolio.</p>
+
+    <div class="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-lg">
+        <table class="w-full text-left border-collapse">
+            <thead>
+                <tr
+                    class="bg-[var(--bg)] border-b border-[var(--border)] text-[var(--text)] text-sm uppercase tracking-wider">
+                    <th class="px-6 py-4 font-bold">Person</th>
+                    <th class="px-6 py-4 font-bold">Stars</th>
+                    <th class="px-6 py-4 font-bold">Title/Review</th>
+                    <th class="px-6 py-4 font-bold text-center">Display Status</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-[var(--border)]">
+                {% for testimonial in all_testimonials %}
+                <tr class="hover:bg-[var(--bg)]/50 transition-colors text-[var(--text)]">
+                    <td class="px-6 py-4 font-medium">{{ testimonial.t_name }}</td>
+                    <td class="px-6 py-4 text-yellow-500">
+                        {{ "★" * testimonial.t_stars }}{{ "☆" * (5 - testimonial.t_stars) }}
+                    </td>
+                    <td class="px-6 py-4 text-sm text-[var(--muted)]">
+                        <span class="font-bold block text-[var(--text)]">{{ testimonial.t_title }}</span>
+                        {{ testimonial.t_text|truncate(50) }}
+                    </td>
+                    <td class="px-6 py-4 text-center">
+                        <label class="admin-toggle">
+                            <input type="checkbox" class="toggle-status" data-id="{{ testimonial._id|string }}" {% if
+                                testimonial.t_display %} checked {% endif %}>
+                            <span class="admin-toggle-track"></span>
+                        </label>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.toggle-status').forEach(toggle => {
+        toggle.addEventListener('change', function () {
+            const testimonialId = this.getAttribute('data-id');
+            const isChecked = this.checked;
+
+            // Send data to Flask via Fetch API
+            fetch('/admin/update-testimonial-visibility', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    id: testimonialId,
+                    display: isChecked
+                })
+            })
+                .then(response => response.json())
+            // .then(data => {
+            //     if (data.status === 'success') {
+            //         console.log('Update successful');
+            //     } else {
+            //         alert('Error updating status');
+            //         this.checked = !isChecked; // Revert if error
+            //     }
+            // });
+        });
+    });
+</script>
+{% endblock %}

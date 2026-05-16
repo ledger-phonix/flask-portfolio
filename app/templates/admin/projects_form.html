@@ -1,0 +1,81 @@
+{% extends "admin/admin_base.html" %}
+
+{% block admin_content %}
+<h1 class="text-3xl font-bold mb-6 text-white">Projects Management</h1>
+<p class="text-slate-400 mb-8">Add, edit, or remove your projects to showcase your work effectively.</p>
+
+<div class="bg-[#1e293b] border border-slate-700 rounded-2xl p-8 shadow-xl">
+    <h2 class="text-xl font-semibold mb-6 text-white flex items-center">
+        <i class="fa-solid fa-plus-circle mr-2 text-blue-500"></i> Add New Project
+    </h2>
+
+    <form method="POST" action="{{ url_for('admin.projects_form') }}" enctype="multipart/form-data" class="space-y-6">
+
+        <div>
+            <label class="block text-sm font-medium text-slate-300 mb-2">Project Title</label>
+            <input type="text" name="title" required
+                class="w-full px-4 py-2.5 bg-[#0f172a] border border-slate-600 rounded-xl text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none transition-all"
+                placeholder="e.g. E-Commerce Platform">
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-slate-300 mb-2">Porject Link</label>
+            <input type="url" name="link"
+                class="w-full px-4 py-2.5 bg-[#0f172a] border border-slate-600 rounded-xl text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none transition-all"
+                placeholder="Link of the project">
+        </div>
+
+
+        <div>
+            <label class="block text-sm font-medium text-slate-300 mb-2">Description</label>
+            <textarea name="description" rows="4" required
+                class="w-full px-4 py-2.5 bg-[#0f172a] border border-slate-600 rounded-xl text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none transition-all"
+                placeholder="What did you build and which technologies were used?"></textarea>
+        </div>
+        <div>
+            <label class="block text-sm font-medium text-slate-300 mb-2">
+                Technologies / Tags <span class="text-xs text-slate-500">(separate with commas)</span>
+            </label>
+            <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500">
+                    <i class="fa-solid fa-tags"></i>
+                </span>
+                <input type="text" name="tags"
+                    class="w-full pl-10 pr-4 py-2.5 bg-[#0f172a] border border-slate-600 rounded-xl text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none transition-all"
+                    placeholder="e.g. Python, Flask, Tailwind CSS, MongoDB">
+            </div>
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-slate-300 mb-2">Project Preview Image</label>
+            <div id="dropzone"
+                class="relative mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-slate-600 border-dashed rounded-xl hover:border-blue-500 transition-colors bg-[#0f172a]">
+
+                <img id="image-preview"
+                    class="hidden absolute inset-0 w-full h-full object-cover rounded-xl opacity-20">
+
+                <div class="space-y-1 text-center z-10">
+                    <i id="upload-icon" class="fa-solid fa-image text-slate-400 text-3xl mb-3"></i>
+                    <div class="flex text-sm text-slate-400">
+                        <label for="file-upload"
+                            class="relative cursor-pointer rounded-md font-medium text-blue-500 hover:text-blue-400">
+                            <span id="upload-text">Upload a file</span>
+                            <input id="file-upload" name="project_image" type="file" class="sr-only" accept="image/*"
+                                >
+                        </label>
+                        <p id="drag-text" class="pl-1">or drag and drop</p>
+                    </div>
+                    <p id="file-name-display" class="text-xs text-blue-400 font-semibold mt-2"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-end pt-4">
+            <button type="submit"
+                class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all transform active:scale-95 shadow-lg shadow-blue-600/20">
+                Publish Project
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}

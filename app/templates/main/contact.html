@@ -1,0 +1,54 @@
+{% extends "main/base.html" %}
+{% block title %}Contact Me - Talha Nadeem{% endblock %}
+
+{% block content %}
+<section id="contact" class="min-h-screen py-16 pt-24 bg-[var(--bg)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-8 text-center text-[var(--text)]">Get in Touch</h2>
+        
+        <div class="max-w-3xl mx-auto bg-[var(--card)] p-8 rounded-lg  border border-[var(--border)]">
+            <form id="contact-form" action="{{ url_for('main.contact') }}" method="POST" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-sm font-medium mb-1 text-[var(--text)]">
+                        Name <span class="text-red-500 font-bold">*</span>
+                    </label>
+                    <input type="text" id="name" name="name" placeholder="Saqib Ali" required 
+                           class="contact-input w-full px-4 py-2 rounded-md bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] focus:ring-2 focus:ring-[var(--button)] outline-none transition-all">
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-medium mb-1 text-[var(--text)]">
+                        Email <span class="text-red-500 font-bold">*</span>
+                    </label>
+                    <input type="email" id="email" name="email" placeholder="domain@example.com" required 
+                           class="contact-input w-full px-4 py-2 rounded-md bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] focus:ring-2 focus:ring-[var(--button)] outline-none transition-all">
+                </div>
+
+                <div>
+                    <label for="subject" class="block text-sm font-medium mb-1 text-[var(--text)]">
+                        Subject <span class="text-red-500 font-bold">*</span>
+                    </label>
+                    <select id="subject" name="subject" required 
+                            class="contact-input w-full px-4 py-2 rounded-md bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] focus:ring-2 focus:ring-[var(--button)] outline-none transition-all">
+                        <option value="general" selected>General Discussion</option>
+                        <option value="issue">Issue Discuss</option>
+                        <option value="project">Project Discussion</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="message" class="block text-sm font-medium mb-1 text-[var(--text)]">
+                        Message <span class="text-red-500 font-bold">*</span>
+                    </label>
+                    <textarea id="message" name="message" rows="4" placeholder="TYPE A MESSAGE" required 
+                              class="contact-input w-full px-4 py-2 rounded-md bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] focus:ring-2 focus:ring-[var(--button)] outline-none transition-all"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-[var(--button)] text-white px-6 py-3 rounded-md font-bold hover:bg-[var(--button-hover)] transition-all duration-300 shadow-md">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

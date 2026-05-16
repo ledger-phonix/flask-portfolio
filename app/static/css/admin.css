@@ -1,0 +1,84 @@
+
+/* css for admin side */
+.nav-link {
+    display: flex;
+    items-center: center;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    color: #94a3b8;
+}
+
+.nav-link:hover {
+    background-color: #334155;
+    color: #f8fafc;
+}
+
+.nav-link.active {
+    background-color: #3b82f6;
+    color: white;
+}
+
+/* Custom Scrollbar for Admin Area */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 10px;
+}
+/* The Label wrapper */
+.admin-toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;  /* Width of the oval */
+    height: 26px; /* Height of the oval */
+}
+
+/* Hide the checkbox */
+.admin-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The Track (The Oval Background) */
+.admin-toggle-track {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #202532; /* Light gray for 'OFF' state */
+    border: 1px solid var(--border, #cbd5e1); /* Fallback border */
+    transition: all 0.3s ease;
+    border-radius: 34px;
+}
+
+/* The Knob (The Circle) */
+.admin-toggle-track:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    z-index: 2; /* Ensures knob stays on top */
+}
+
+/* ON State: Oval Background color */
+.admin-toggle input:checked + .admin-toggle-track {
+    background-color: var(--button, #6366f1); /* Your brand color */
+    border-color: var(--button, #6366f1);
+}
+
+/* ON State: Move the Knob */
+.admin-toggle input:checked + .admin-toggle-track:before {
+    transform: translateX(24px);
+}

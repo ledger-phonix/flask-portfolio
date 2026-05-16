@@ -1,0 +1,453 @@
+{% extends "main/base.html" %}
+{% block content %}
+<!-- Hero Section -->
+<section class="hero relative overflow-hidden">
+    <canvas id="hero-dots-canvas" class="absolute inset-0 pointer-events-none"></canvas>
+    <div class="hero-gradient absolute inset-0 pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-2 gap-2 items-center min-h-screen">
+        <div class="hero-content space-y-1 sm:space-y-2">
+            <p class="text-xs sm:text-sm font-semibold tracking-wide uppercase text-[var(--button)]">Hello, I’m</p>
+            <h1 class="text-2xl sm:text-4xl lg:text-6xl font-extrabold leading-tight">Talha Nadeem</h1>
+            <div class="profession-container">
+                <span class="profession-text text-[var(--button)] text-xl sm:text-3xl lg:text-5xl font-bold "></span>
+            </div>
+            <div class="flex flex-wrap gap-2 sm:gap-4">
+                <button id="hire-me" style="margin-top: 10px;"
+                    class="relative inline-flex items-center justify-center px-4 py-2 sm:px-6 sm:py-3 rounded-full bg-[var(--button)] text-white font-semibold shadow-lg ring-1 ring-[var(--button)] hover:bg-[var(--button-hover)] transition-all duration-300 focus:outline-none focus-visible:ring-2 text-sm sm:text-base">
+                    Hire Me
+                </button>
+            </div>
+        </div>
+
+        <div class="hero-visual hide-hero-img relative flex justify-center">
+            <div class="hero-shapes">
+                <img src="{{url_for('static', filename='img/talha-hero4.png')}}" alt="Talha Nadeem"
+                    class="relative block w-[180px] sm:w-[280px] lg:w-[320px] max-w-full animate-float mt-4 sm:mt-8" />
+
+            </div>
+        </div>
+    </div>
+
+    <div id="contact-popup" class="popup hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
+        <div
+            class="popup-card relative w-full max-w-md rounded-2xl bg-[var(--card)] p-6 shadow-2xl border border-[var(--border)]">
+            <button id="popup-close"
+                class="absolute top-4 right-4 text-[var(--muted)] hover:text-[var(--text)] transition-colors">
+                <i class="fas fa-times text-lg"></i>
+            </button>
+            <h2 class="text-xl font-bold mb-4">Let's connect</h2>
+            <p class="text-sm text-[var(--muted)] mb-5">Use email or phone with quick action icons.</p>
+            <div class="space-y-3">
+                <div
+                    class="contact-row flex items-center justify-between rounded-lg border border-[var(--border)] p-3 transition-all duration-300">
+                    <div class="flex items-center gap-2">
+                        <span class="text-lg"><i class="fas fa-envelope"></i></span>
+                        <span class="font-medium">talhanadeem718@gmail.com</span>
+                    </div>
+                    <a href="mailto:talhanadeem718@gmail.com" class="popup-action" aria-label="Email"><i
+                            class="fas fa-paper-plane"></i></a>
+                </div>
+                <div
+                    class="contact-row flex items-center justify-between rounded-lg border border-[var(--border)] p-3 transition-all duration-300">
+                    <div class="flex items-center gap-2">
+                        <span class="text-lg"><i class="fas fa-phone"></i></span>
+                        <span class="font-medium">+92 308 7388210</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <a href="tel:+923087388210" class="popup-action" aria-label="Call"><i
+                                class="fas fa-phone-alt"></i></a>
+                        <a href="https://wa.me/923087388210" target="_blank" class="popup-action"
+                            aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about py-20 bg-[var(--bg)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="heading-with-lines text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[var(--text)]">About Me
+            </h2>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="about-content animate-on-scroll">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[var(--text)] mb-6">Hello! I'm Talha
+                </h2>
+                <p class="text-base sm:text-lg text-[var(--muted)] leading-relaxed mb-4">
+                    I believe that data is only as valuable as the problems it solves.
+                </p>
+                <p class="text-base sm:text-lg text-[var(--muted)] leading-relaxed mb-4">
+                    My journey started with a fascination for automation—specifically, how to gather information from
+                    the vast corners of the web through Python scraping. That curiosity evolved into a deep commitment
+                    to the full data lifecycle. Whether it's architecting a custom Flask application to manage live
+                    information or building interactive Power BI dashboards to reveal hidden trends, my goal is always
+                    the same: Clarity.
+                </p>
+                <p class="text-base sm:text-lg text-[var(--muted)] leading-relaxed">
+                    I don't just write code or move numbers around; I dive into the complexity of your data to find the
+                    story it's trying to tell. I'm currently focused on bridging the gap between backend engineering and
+                    data intelligence to help organizations make faster, smarter decisions.
+                </p>
+                <div class="mt-8">
+                    <a href="#"
+                        class="inline-flex items-center justify-center px-5 py-3 rounded-full bg-[var(--button)] text-white font-semibold shadow-lg ring-1 ring-[var(--button)] hover:bg-[var(--button-hover)] transition-all duration-300 focus:outline-none focus-visible:ring-2 text-sm sm:text-base"
+                        aria-label="Download CV">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+            <div class="about-image animate-on-scroll">
+                <img src="{{url_for('static',filename = 'img/Talha-About.png')}}" alt="Talha About"
+                    class="w-full max-w-md mx-auto rounded-lg shadow-xl" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technical Stack Section -->
+<section class="technical-stack py-20 bg-[var(--bg)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="heading-with-lines text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[var(--text)]">Technical
+                <span class="text-[var(--button)]">Stack</span>
+            </h2>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+            <div class="stack-card animate-on-scroll">
+                <i class="fab fa-python text-3xl mb-2"></i>
+                <strong>Python</strong>
+                <p>Data Analysis & Automation</p>
+            </div>
+            <div class="stack-card animate-on-scroll">
+                <i class="fas fa-flask text-3xl mb-2"></i>
+                <strong>Flask</strong>
+                <p>Web Framework</p>
+            </div>
+            <div class="stack-card animate-on-scroll">
+                <i class="fas fa-chart-line text-3xl mb-2"></i>
+                <strong>Power BI</strong>
+                <p>Business Intelligence</p>
+            </div>
+            <div class="stack-card animate-on-scroll">
+                <i class="fas fa-database text-3xl mb-2"></i>
+                <strong>MySQL</strong>
+                <p>Relational Databases</p>
+            </div>
+            <div class="stack-card animate-on-scroll">
+                <i class="fas fa-database text-3xl mb-2"></i>
+                <strong>PostgreSQL</strong>
+                <p>Advanced Data Storage</p>
+            </div>
+            <div class="stack-card animate-on-scroll">
+                <i class="fab fa-linux text-3xl mb-2"></i>
+                <strong>Linux</strong>
+                <p>Server Environment</p>
+            </div>
+            <div class="stack-card animate-on-scroll">
+                <i class="fas fa-robot text-3xl mb-2"></i>
+                <strong>Generative AI / LLMs</strong>
+                <p>Prompt Engineering & Efficiency</p>
+            </div>
+            <div class="stack-card animate-on-scroll">
+                <i class="fab fa-git-alt text-3xl mb-2"></i>
+                <strong>Git & GitHub</strong>
+                <p>Version Control</p>
+            </div>
+            <div class="stack-card animate-on-scroll">
+                <i class="fas fa-table text-3xl mb-2"></i>
+                <strong>Pandas</strong>
+                <p>Data Manipulation</p>
+            </div>
+            <div class="stack-card animate-on-scroll">
+                <i class="fas fa-magic text-3xl mb-2"></i>
+                <strong>Tailwind CSS</strong>
+                <p>Modern UI Styling</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- My Services Section -->
+
+<section id="services" class="py-24 bg-[var(--bg)] transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
+        <div class="mb-12 text-center">
+            <h2 class="heading-with-lines text-4xl sm:text-5xl font-extrabold text-[var(--text)] tracking-tight">
+                Specialized <span class="text-[var(--button)]">Services</span>
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div
+                class="group p-8 bg-[var(--card)] border border-[var(--border)] rounded-3xl hover:border-[var(--button)] transition-all duration-300 shadow-sm hover:shadow-2xl">
+                <div
+                    class="w-14 h-14 bg-[var(--button)]/10 rounded-2xl flex items-center justify-center mb-6 text-[var(--button)] group-hover:bg-[var(--button)] group-hover:text-white transition-all">
+                    <i class="fas fa-layer-group text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[var(--text)] mb-3 uppercase tracking-wide">Web App Development</h3>
+                <p class="text-[var(--muted)] text-sm leading-relaxed">
+                    I build full-stack web tools using Flask and Python. I use MongoDB and SQL to handle your data
+                    securely, creating fast and modern websites that work perfectly on any screen size.
+                </p>
+            </div>
+
+            <div
+                class="group p-8 bg-[var(--card)] border border-[var(--border)] rounded-3xl hover:border-[var(--button)] transition-all duration-300 shadow-sm hover:shadow-2xl">
+                <div
+                    class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-all">
+                    <i class="fas fa-chart-line text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[var(--text)] mb-3 uppercase tracking-wide">Data Analysis</h3>
+                <p class="text-[var(--muted)] text-sm leading-relaxed">
+                    I take your messy business data and turn it into clear reports. Using Power BI and Tableau, I create
+                    visual dashboards that show you exactly how your business is performing and where to grow.
+                </p>
+            </div>
+
+            <div
+                class="group p-8 bg-[var(--card)] border border-[var(--border)] rounded-3xl hover:border-[var(--button)] transition-all duration-300 shadow-sm hover:shadow-2xl">
+                <div
+                    class="w-14 h-14 bg-orange-500/10 rounded-2xl flex items-center justify-center mb-6 text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all">
+                    <i class="fas fa-spider text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[var(--text)] mb-3 uppercase tracking-wide">Web Scraping</h3>
+                <p class="text-[var(--muted)] text-sm leading-relaxed">
+                    I create automated scripts to collect information from websites. Whether you need market research or
+                    price tracking, I use Python tools to gather and organize data for you quickly.
+                </p>
+            </div>
+
+            <div
+                class="group p-8 bg-[var(--card)] border border-[var(--border)] rounded-3xl hover:border-[var(--button)] transition-all duration-300 shadow-sm hover:shadow-2xl">
+                <div
+                    class="w-14 h-14 bg-yellow-500/10 rounded-2xl flex items-center justify-center mb-6 text-yellow-600 group-hover:bg-yellow-500 group-hover:text-white transition-all">
+                    <i class="fab fa-python text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[var(--text)] mb-3 uppercase tracking-wide">Python Scripting</h3>
+                <p class="text-[var(--muted)] text-sm leading-relaxed">
+                    I write custom Python scripts to automate your daily boring tasks. From moving files to processing
+                    spreadsheets, I help you save time by making your computer do the hard work for you.
+                </p>
+            </div>
+
+            <div
+                class="group p-8 bg-[var(--card)] border border-[var(--border)] rounded-3xl hover:border-[var(--button)] transition-all duration-300 shadow-sm hover:shadow-2xl">
+                <div
+                    class="w-14 h-14 bg-indigo-500/10 rounded-2xl flex items-center justify-center mb-6 text-indigo-500 group-hover:bg-indigo-500 group-hover:text-white transition-all">
+                    <i class="fas fa-database text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[var(--text)] mb-3 uppercase tracking-wide">SQL & MongoDB</h3>
+                <p class="text-[var(--muted)] text-sm leading-relaxed">
+                    I design and manage both SQL and NoSQL (MongoDB) databases. I make sure your data is well-organized,
+                    easy to access, and optimized so your applications run smoothly and without delays.
+                </p>
+            </div>
+
+            <div
+                class="group p-8 bg-[var(--card)] border border-[var(--border)] rounded-3xl hover:border-[var(--button)] transition-all duration-300 shadow-sm hover:shadow-2xl">
+                <div
+                    class="w-14 h-14 bg-green-500/10 rounded-2xl flex items-center justify-center mb-6 text-green-600 group-hover:bg-green-500 group-hover:text-white transition-all">
+                    <i class="fas fa-broom text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[var(--text)] mb-3 uppercase tracking-wide">Data Cleaning</h3>
+                <p class="text-[var(--muted)] text-sm leading-relaxed">
+                    I fix and organize broken or messy data files. Using Excel and Power Query, I remove errors and
+                    format your information so it is 100% accurate and ready for your professional use.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- My Certificates section  -->
+<section id="certificates" class="py-20 bg-[var(--bg)] transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-12">
+            <h2 class="heading-with-lines text-4xl sm:text-5xl font-extrabold text-[var(--text)] tracking-tight">
+                Certifications
+            </h2>
+            <!-- <div class="h-1.5 w-20 bg-[var(--button)] mx-auto mt-4 rounded-full"></div> -->
+            <p class="mt-6 text-base sm:text-lg text-[var(--muted)] max-w-2xl mx-auto">
+                Verified technical milestones and professional training achievements.
+            </p>
+        </div>
+
+        <div
+            class="relative bg-[var(--card)] border border-[var(--border)] rounded-3xl p-6 sm:p-10 shadow-2xl overflow-hidden">
+
+            <div class="flex justify-between items-center mb-8 pb-6 border-b border-[var(--border)]">
+                <div class="flex items-center gap-3">
+                    <div class="flex -space-x-2">
+                        <div
+                            class="w-8 h-8 rounded-full bg-[var(--button)] flex items-center justify-center text-white text-xs border-2 border-[var(--card)]">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                    </div>
+                    <span class="text-xs sm:text-sm font-medium text-[var(--muted)]">
+                        {{ all_certificates|length }} Verified Credentials
+                    </span>
+                </div>
+
+                <div class="flex gap-3">
+                    <button id="certificate-prev"
+                        class="w-11 h-11 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] hover:bg-[var(--button)] hover:text-white transition-all flex items-center justify-center shadow-sm">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="certificate-next"
+                        class="w-11 h-11 rounded-xl bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] hover:bg-[var(--button)] hover:text-white transition-all flex items-center justify-center shadow-sm">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="certificate-slider" class="relative min-h-[650px] md:min-h-[500px] w-full ">
+                {% for certificate in all_certificates %}
+                <div class="certificate-item absolute inset-0 opacity-0 translate-x-4 pointer-events-none transition-all duration-700 ease-out flex flex-col md:flex-row items-center gap-4 md:gap-6 px-2"
+                    data-index="{{ loop.index0 }}">
+                    <div
+                        class="group relative w-full md:w-1/2 flex-shrink-0 transform transition-transform duration-500 hover:scale-[1.02]">
+                        <div
+                            class="absolute -inset-2 bg-gradient-to-r from-[var(--button)] to-[var(--accent)] rounded-2xl blur-lg opacity-10 group-hover:opacity-30 transition duration-1000">
+
+                        </div>
+                        <div
+                            class="relative rounded-xl overflow-hidden border border-[var(--border)] shadow-2xl bg-white">
+
+                            <img src="{{certificate.c_image}}" alt="{{certificate.c_title}}"
+                                class="w-full h-auto object-cover" />
+
+                        </div>
+
+                    </div>
+                    <div class="w-full md:w-1/2 text-center md:text-left">
+
+                        <div
+                            class="inline-block px-3 py-1 rounded-md  text-[var(--button)] text-[15px] font-bold uppercase tracking-widest mb-4">
+                            {{certificate.c_issuer}}
+                        </div>
+                        <h3 class="text-2xl md:text-4xl font-black text-[var(--text)] mb-4 leading-tight">
+                            {{certificate.c_title}}
+
+                        </h3>
+                        <p
+                            class="text-[var(--muted)] text-sm md:text-base leading-relaxed mb-4 italic border-l-4 border-[var(--border)] pl-4 py-1">
+                            "{{certificate.c_description}}"
+                        </p>
+                        <div
+                            class="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-6 text-[var(--muted)] text-xs md:text-sm font-semibold">
+                            <span class="flex items-center gap-2">
+                                <i class="far fa-calendar-alt text-[var(--accent)]"></i>
+                                Obtained: <span class="text-[var(--text)]">{{certificate.c_year}}</span>
+                            </span>
+                            <span class="hidden md:block w-1.5 h-1.5 rounded-full bg-[var(--border)]"></span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials" class="py-24 bg-[var(--bg)] transition-colors duration-300 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-12">
+            <h2 class="heading-with-lines text-4xl sm:text-5xl font-extrabold text-[var(--text)] tracking-tight">
+                Client Impact
+            </h2>
+
+        </div>
+
+        <div class="relative group">
+            <div id="testimonial-viewport" class="overflow-hidden cursor-grab active:cursor-grabbing">
+                <div id="testimonial-track"
+                    class="flex transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]">
+
+                    {% for testimonial in active_testimonials %}
+                    <div class="flex-shrink-0 w-full px-4">
+                        <div
+                            class="relative bg-[var(--card)] border border-[var(--border)] rounded-3xl overflow-hidden shadow-xl max-w-4xl mx-auto flex flex-col md:flex-row min-h-[350px]">
+
+                            <div
+                                class="w-full md:w-1/3 bg-[var(--bg)]/30 p-8 flex flex-col items-center border-b md:border-b-0 md:border-r border-[var(--border)]">
+                                <div class="w-24 h-24 rounded-full border-4 border-[var(--button)] p-1 mb-4">
+                                    <img src="{{ testimonial.t_image if testimonial.t_image else 'https://ui-avatars.com/api/?name=' + testimonial.t_name + '&background=random' }}"
+                                        alt="{{ testimonial.t_name }}" class="w-full h-full object-cover rounded-full">
+                                </div>
+
+                                <h4 class="text-xl font-bold text-[var(--text)] text-center">{{ testimonial.t_name }}
+                                </h4>
+
+                                <div class="mt-auto pt-6 w-full flex justify-start">
+                                    {% if testimonial.t_linkedin %}
+                                    <a href="{{ testimonial.t_linkedin }}" target="_blank"
+                                        class="flex items-center gap-2 text-sm font-bold text-[#0077b5] hover:opacity-80 transition-opacity">
+                                        <i class="fa-brands fa-linkedin text-lg"></i>
+                                        Connect
+                                    </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="w-full md:w-2/3 p-8 md:p-12 flex flex-col justify-center">
+                                <span class="text-sm font-medium text-[var(--accent)] uppercase tracking-widest mb-2">
+                                    {{ testimonial.t_title }}
+                                </span>
+
+                                <div class="flex gap-1 mb-6 text-yellow-500">
+                                    {% for i in range(testimonial.t_stars|int) %}
+                                    <i class="fa-solid fa-star text-sm"></i>
+                                    {% endfor %}
+                                </div>
+
+                                <div class="relative">
+                                    <i
+                                        class="fa-solid fa-quote-left absolute -top-4 -left-4 text-4xl text-[var(--button)] opacity-10"></i>
+                                    <p
+                                        class="text-[var(--text)] text-lg md:text-xl leading-relaxed italic relative z-10">
+                                        {{ testimonial.t_text }}
+                                    </p>
+                                </div>
+
+                                <div class="mt-8 text-right">
+                                    <span
+                                        class="text-[10px] uppercase font-black tracking-tighter text-[var(--muted)] opacity-50">Verified
+                                        Feedback</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+
+            <div id="testimonial-dots" class="flex justify-center gap-3 mt-10">
+                {% for testimonial in active_testimonials %}
+                <button class="dot w-3 h-3 rounded-full bg-[var(--border)] transition-all duration-300"
+                    data-index="{{ loop.index0 }}"></button>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="mt-16 text-center">
+            <a href="{{url_for('main.testimonial')}}"
+                class="group relative inline-flex items-center gap-3 px-8 py-4 bg-[var(--button)] text-white rounded-full font-bold overflow-hidden transition-all hover:pr-12">
+                <span class="relative z-10">Share Your Experience</span>
+                <i
+                    class="fa-solid fa-arrow-right absolute right-4 opacity-0 group-hover:opacity-100 transition-all"></i>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "admin/admin_base.html" %}
+
+{% block admin_content %}
+<div class="p-6">
+    <div class="mb-8">
+        <h1 class="text-3xl font-black text-[var(--text)] tracking-tight">Dashboard Overview</h1>
+        <p class="text-[var(--muted)]">Welcome back! Here is what's happening with your portfolio.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        
+        <div class="bg-[var(--card)] border border-[var(--border)] p-6 rounded-3xl shadow-sm hover:shadow-md transition-all border-l-4 border-l-[var(--button)]">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm font-bold text-[var(--muted)] uppercase tracking-wider">Total Testimonials</p>
+                    <h3 class="text-3xl font-black text-[var(--text)] mt-1">{{ t_count }}</h3>
+                </div>
+                <div class="w-12 h-12 bg-[var(--button)]/10 rounded-2xl flex items-center justify-center text-[var(--button)]">
+                    <i class="fas fa-comment-dots text-xl"></i>
+                </div>
+            </div>
+            <div class="mt-4 flex items-center text-xs font-medium text-green-500">
+                <i class="fas fa-check-circle mr-1"></i>
+                <span>Active on site</span>
+            </div>
+        </div>
+
+        <div class="bg-[var(--card)] border border-[var(--border)] p-6 rounded-3xl shadow-sm hover:shadow-md transition-all border-l-4 border-l-blue-500">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm font-bold text-[var(--muted)] uppercase tracking-wider">Active Projects</p>
+                    <h3 class="text-3xl font-black text-[var(--text)] mt-1">{{ p_count }}</h3>
+                </div>
+                <div class="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-500">
+                    <i class="fas fa-project-diagram text-xl"></i>
+                </div>
+            </div>
+            <div class="mt-4 flex items-center text-xs font-medium text-[var(--muted)]">
+                <span>View project gallery</span>
+            </div>
+        </div>
+
+        <div class="bg-[var(--card)] border border-[var(--border)] p-6 rounded-3xl shadow-sm hover:shadow-md transition-all border-l-4 border-l-indigo-500">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm font-bold text-[var(--muted)] uppercase tracking-wider">Certifications</p>
+                    <h3 class="text-3xl font-black text-[var(--text)] mt-1">{{ c_count }}</h3>
+                </div>
+                <div class="w-12 h-12 bg-indigo-500/10 rounded-2xl flex items-center justify-center text-indigo-500">
+                    <i class="fas fa-certificate text-xl"></i>
+                </div>
+            </div>
+            <div class="mt-4 flex items-center text-xs font-medium text-[var(--muted)]">
+                <span>Updated Apr 2026</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-3xl p-8 text-center">
+        <p class="text-[var(--muted)] italic">"Success is the sum of small efforts, repeated day-in and day-out."</p>
+    </div>
+</div>
+{% endblock %}

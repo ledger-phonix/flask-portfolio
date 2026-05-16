@@ -1,0 +1,76 @@
+{% extends 'admin/admin_base.html' %}
+
+{% block admin_content %}
+    <h1 class="text-3xl font-bold mb-6 text-white">Certificates Management</h1>
+    <p class="text-slate-400 mb-8">Manage your professional credentials and academic achievements.</p>
+
+    <div class="bg-[#1e293b] border border-slate-700 rounded-2xl p-8 shadow-xl">
+        <h2 class="text-xl font-semibold mb-6 text-white flex items-center">
+            <i class="fa-solid fa-certificate mr-2 text-yellow-500"></i> Add New Certificate
+        </h2>
+        
+        <form method="POST" action="{{ url_for('admin.certificates_form') }}" enctype="multipart/form-data" class="space-y-6">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-2">Certificate Title</label>
+                    <input type="text" name="title" required
+                           class="w-full px-4 py-2.5 bg-[#0f172a] border border-slate-600 rounded-xl text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none transition-all"
+                           placeholder="e.g. Google Data Analytics Professional">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-2">Issuing Organization</label>
+                    <input type="text" name="issuer" required
+                           class="w-full px-4 py-2.5 bg-[#0f172a] border border-slate-600 rounded-xl text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none transition-all"
+                           placeholder="e.g. Coursera / Google / University">
+                </div>
+            </div>
+
+            <div class="w-full md:w-1/2">
+                <label class="block text-sm font-medium text-slate-300 mb-2">Year of Completion</label>
+                <input type="number" name="year" min="2015" max="2030" required
+                       class="w-full px-4 py-2.5 bg-[#0f172a] border border-slate-600 rounded-xl text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none transition-all"
+                       placeholder="2026">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-slate-300 mb-2">Short Description</label>
+                <textarea name="description" rows="3" required
+                          class="w-full px-4 py-2.5 bg-[#0f172a] border border-slate-600 rounded-xl text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none transition-all"
+                          placeholder="Briefly mention the skills verified by this certificate"></textarea>
+            </div>
+
+              <div>
+            <label class="block text-sm font-medium text-slate-300 mb-2">Certificate Preview Image</label>
+            <div id="dropzone"
+                class="relative mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-slate-600 border-dashed rounded-xl hover:border-blue-500 transition-colors bg-[#0f172a]">
+
+                <img id="image-preview"
+                    class="hidden absolute inset-0 w-full h-full object-cover rounded-xl opacity-20">
+
+                <div class="space-y-1 text-center z-10">
+                    <i id="upload-icon" class="fa-solid fa-image text-slate-400 text-3xl mb-3"></i>
+                    <div class="flex text-sm text-slate-400">
+                        <label for="file-upload"
+                            class="relative cursor-pointer rounded-md font-medium text-blue-500 hover:text-blue-400">
+                            <span id="upload-text">Upload a file</span>
+                            <input id="file-upload" name="certificate_image" type="file" class="sr-only" accept="image/*"
+                                required>
+                        </label>
+                        <p id="drag-text" class="pl-1">or drag and drop</p>
+                    </div>
+                    <p id="file-name-display" class="text-xs text-blue-400 font-semibold mt-2"></p>
+                </div>
+            </div>
+        </div>
+
+            <div class="flex justify-end pt-4">
+                <button type="submit" 
+                        class="px-8 py-3 bg-yellow-600 hover:bg-yellow-700 text-white font-bold rounded-xl transition-all transform active:scale-95 shadow-lg shadow-yellow-600/20">
+                    Add Certificate
+                </button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
