@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const professionTextEl = document.querySelector('.profession-text');
 
 if (professionTextEl) {
-    const professions = ['Data Analyst', 'Python Developer', 'Full-Stack Engineer'];
+    const professions = ['Data Analyst', 'Python Developer', 'Web App Developer'];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
