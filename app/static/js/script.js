@@ -435,9 +435,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
-
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('testimonial-track');
+    
+    // Safety check: If the testimonial track isn't on this page, exit immediately
+    if (!track) return;
+
     const slides = Array.from(track.children);
     const dots = document.querySelectorAll('.dot');
     let currentIndex = 0;
@@ -487,5 +490,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize first slide
     updateSlider(0);
 });
-
-
