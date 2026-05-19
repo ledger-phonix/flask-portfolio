@@ -1,8 +1,8 @@
 import cloudinary.uploader
-from flask import render_template , Blueprint, request, flash, redirect, url_for
+from flask import render_template , Blueprint, request, flash, redirect, url_for, send_from_directory
 from .mail_utils import send_email
 from .database import db_handler
-
+import os
 main = Blueprint('main',__name__)
 
 @main.route('/')
@@ -11,6 +11,14 @@ def index():
     testimonials = db_handler.get_active_testimonials()
      
     return render_template('main/index.html', all_certificates = certificates , active_testimonials = testimonials)
+
+@main.route('/robots.txt')
+def serve_robots():
+    # Combines your root path with the static folder name
+    static_folder_path = os.path.join(main.root_path, 'static')
+    
+    # Grabs robots.txt directly from app/static/
+    return send_from_directory(static_folder_path, 'robots.txt')
 
 @main.route('/contact', methods = ['GET','POST'])
 def contact():
