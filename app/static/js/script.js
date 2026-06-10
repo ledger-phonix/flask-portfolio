@@ -290,6 +290,7 @@ if (professionTextEl) {
     }
 
 });
+// services section js
 
 
 const certificateItems = document.querySelectorAll('.certificate-item');
