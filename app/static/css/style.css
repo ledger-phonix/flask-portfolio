@@ -427,6 +427,87 @@ html[data-theme="dark"] #theme-toggle {
   transform: translateY(0);
 }
 
+.service-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  color: var(--text);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+[data-theme="dark"] .service-card {
+  background: rgba(31, 41, 55, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.service-card p {
+  color: var(--muted);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+[data-theme="dark"] .service-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.service-card.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.service-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Why Me Section Animations */
+.why-me-left.animate-on-scroll,
+.why-me-right.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s;
+}
+
+.why-me-left.animate,
+.why-me-right.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.why-me-left svg {
+  animation: float 3s ease-in-out infinite;
+}
+
+.why-me-left svg:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.why-me-left svg:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.why-me-left svg:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 .heading-with-lines::after {
   content: '';
   position: absolute;

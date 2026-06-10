@@ -108,6 +108,93 @@
     </div>
 </section>
 
+<!-- Why Me Section -->
+<section class="py-20 bg-[var(--bg)] transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Side: Question Marks -->
+            <div class="why-me-left animate-on-scroll flex flex-col items-center lg:items-start justify-center space-y-6">
+                <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                    <svg class="w-20 h-20 sm:w-28 sm:h-28 text-[var(--button)] opacity-80 hover:opacity-100 transition-opacity" viewBox="0 0 100 100" fill="currentColor">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="3"/>
+                        <text x="50" y="65" font-size="60" font-weight="bold" text-anchor="middle" font-family="Arial, sans-serif">?</text>
+                    </svg>
+                    <svg class="w-20 h-20 sm:w-28 sm:h-28 text-[var(--accent)] opacity-80 hover:opacity-100 transition-opacity" viewBox="0 0 100 100" fill="currentColor">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="3"/>
+                        <text x="50" y="65" font-size="60" font-weight="bold" text-anchor="middle" font-family="Arial, sans-serif">?</text>
+                    </svg>
+                    <svg class="w-20 h-20 sm:w-28 sm:h-28 text-blue-500 opacity-80 hover:opacity-100 transition-opacity" viewBox="0 0 100 100" fill="currentColor">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="3"/>
+                        <text x="50" y="65" font-size="60" font-weight="bold" text-anchor="middle" font-family="Arial, sans-serif">?</text>
+                    </svg>
+                </div>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[var(--text)] text-center lg:text-left">Why Me?</h2>
+            </div>
+
+            <!-- Right Side: Description -->
+            <div class="why-me-right animate-on-scroll">
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-[var(--button)]/10 text-[var(--button)]">
+                                <i class="fas fa-code text-xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-[var(--text)] mb-2">Quality Web Development</h3>
+                            <p class="text-[var(--muted)] text-base leading-relaxed">
+                                I deliver clean, maintainable, and scalable web applications built with modern best practices. Every line of code is crafted with performance and user experience in mind.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-blue-500/10 text-blue-500">
+                                <i class="fas fa-flask text-xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-[var(--text)] mb-2">Flask Expertise</h3>
+                            <p class="text-[var(--muted)] text-base leading-relaxed">
+                                Specialized in building robust backend systems and APIs with Flask. I create secure, efficient server-side solutions paired with MongoDB, MySQL, or PostgreSQL for your exact needs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-yellow-500/10 text-yellow-600">
+                                <i class="fab fa-python text-xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-[var(--text)] mb-2">Custom Automation Tools</h3>
+                            <p class="text-[var(--muted)] text-base leading-relaxed">
+                                I build powerful Python automation scripts to handle repetitive tasks, web scraping, data processing, and system workflows—saving you time and effort every single day.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-purple-500/10 text-purple-500">
+                                <i class="fas fa-database text-xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-[var(--text)] mb-2">Data-Driven Solutions</h3>
+                            <p class="text-[var(--muted)] text-base leading-relaxed">
+                                From cleaning messy datasets to designing comprehensive dashboards, I ensure your data tells a compelling story that drives real business decisions.
+                            </p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Technical Stack Section -->
 <section class="technical-stack py-20 bg-[var(--bg)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -186,7 +273,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
             <div
-                class="group p-8 bg-[var(--card)] border border-[var(--border)] rounded-3xl hover:border-[var(--button)] transition-all duration-300 shadow-sm hover:shadow-2xl ">
+                class="group service-card animate-on-scroll p-8 border border-[var(--border)] rounded-3xl hover:border-[var(--button)] transition-all duration-300 shadow-sm hover:shadow-2xl ">
                 <div
                     class="w-14 h-14 bg-[var(--button)]/10 rounded-2xl flex items-center justify-center mb-6 text-[var(--button)] group-hover:bg-[var(--button)] group-hover:text-white transition-all">
                     <i class="fas fa-layer-group text-2xl"></i>
@@ -202,7 +289,7 @@
             </div>
 
             <div
-                class="group p-8 bg-[var(--card)] border border-[var(--border)] rounded-3xl hover:border-[var(--button)] transition-all duration-300 shadow-sm hover:shadow-2xl">
+                class="group service-card animate-on-scroll p-8 border border-[var(--border)] rounded-3xl hover:border-[var(--button)] transition-all duration-300 shadow-sm hover:shadow-2xl">
                 <div
                     class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-all">
                     <i class="fas fa-chart-line text-2xl"></i>
@@ -218,7 +305,7 @@
             </div>
 
             <div
-                class="group p-8 bg-[var(--card)] border border-[var(--border)] rounded-3xl hover:border-[var(--button)] transition-all duration-300 shadow-sm hover:shadow-2xl">
+                class="group service-card animate-on-scroll p-8 border border-[var(--border)] rounded-3xl hover:border-[var(--button)] transition-all duration-300 shadow-sm hover:shadow-2xl">
                 <div
                     class="w-14 h-14 bg-orange-500/10 rounded-2xl flex items-center justify-center mb-6 text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all">
                     <i class="fas fa-spider text-2xl"></i>
@@ -234,7 +321,7 @@
             </div>
 
             <div
-                class="group p-8 bg-[var(--card)] border border-[var(--border)] rounded-3xl hover:border-[var(--button)] transition-all duration-300 shadow-sm hover:shadow-2xl">
+                class="group service-card animate-on-scroll p-8 bg-[var(--card)] border border-[var(--border)] rounded-3xl hover:border-[var(--button)] transition-all duration-300 shadow-sm hover:shadow-2xl">
                 <div
                     class="w-14 h-14 bg-yellow-500/10 rounded-2xl flex items-center justify-center mb-6 text-yellow-600 group-hover:bg-yellow-500 group-hover:text-white transition-all">
                     <i class="fab fa-python text-2xl"></i>
@@ -247,7 +334,7 @@
             </div>
 
             <div
-                class="group p-8 bg-[var(--card)] border border-[var(--border)] rounded-3xl hover:border-[var(--button)] transition-all duration-300 shadow-sm hover:shadow-2xl">
+                class="group service-card animate-on-scroll p-8 border border-[var(--border)] rounded-3xl hover:border-[var(--button)] transition-all duration-300 shadow-sm hover:shadow-2xl">
                 <div
                     class="w-14 h-14 bg-indigo-500/10 rounded-2xl flex items-center justify-center mb-6 text-indigo-500 group-hover:bg-indigo-500 group-hover:text-white transition-all">
                     <i class="fas fa-database text-2xl"></i>
@@ -260,7 +347,7 @@
             </div>
 
             <div
-                class="group p-8 bg-[var(--card)] border border-[var(--border)] rounded-3xl hover:border-[var(--button)] transition-all duration-300 shadow-sm hover:shadow-2xl">
+                class="group service-card animate-on-scroll p-8 border border-[var(--border)] rounded-3xl hover:border-[var(--button)] transition-all duration-300 shadow-sm hover:shadow-2xl">
                 <div
                     class="w-14 h-14 bg-green-500/10 rounded-2xl flex items-center justify-center mb-6 text-green-600 group-hover:bg-green-500 group-hover:text-white transition-all">
                     <i class="fas fa-broom text-2xl"></i>
