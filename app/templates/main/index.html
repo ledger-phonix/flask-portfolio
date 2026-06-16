@@ -1,4 +1,13 @@
 {% extends "main/base.html" %}
+{% block title %}Talha Nadeem | Python Developer & Data Analyst{% endblock %}
+{% block meta_description %}Talha Nadeem is a Python developer and data analyst specializing in fast Flask applications, automation, and business-ready dashboards.{% endblock %}
+{% block og_title %}Talha Nadeem | Python Developer & Data Analyst{% endblock %}
+{% block og_description %}Build smarter business apps and dashboards with Talha Nadeem — Python, Flask, and data automation expert.{% endblock %}
+{% block twitter_title %}Talha Nadeem Portfolio{% endblock %}
+{% block twitter_description %}Fast, polished Flask apps, intelligent data automation, and clean dashboards by Talha Nadeem.{% endblock %}
+{% block preload_images %}
+<link rel="preload" as="image" href="{{ url_for('static', filename='img/talha-hero4.png') }}">
+{% endblock %}
 {% block content %}
 <!-- Hero Section -->
 <section class="hero relative overflow-hidden">
@@ -21,7 +30,8 @@
 
         <div class="hero-visual hide-hero-img relative flex justify-center">
             <div class="hero-shapes">
-                <img src="{{url_for('static', filename='img/talha-hero4.png')}}" alt="Talha-Nadeem-Python-Developer"
+                <img src="{{ url_for('static', filename='img/talha-hero4.png') }}" alt="Talha-Nadeem-Python-Developer"
+                    width="320" height="320" fetchpriority="high"
                     class="relative block w-[180px] sm:w-[280px] lg:w-[320px] max-w-full animate-float mt-4 sm:mt-8" />
 
             </div>
@@ -101,8 +111,8 @@
                 </div>
             </div>
             <div class="about-image animate-on-scroll">
-                <img src="{{url_for('static',filename = 'img/talha-nadeem.png')}}" alt="Talha-Nadeem-Python-Developer"
-                    class="w-full max-w-md mx-auto rounded-lg shadow-xl" />
+                <img src="{{ url_for('static', filename='img/talha-nadeem.png') }}" alt="Talha-Nadeem-Python-Developer"
+                    loading="lazy" class="w-full max-w-md mx-auto rounded-lg shadow-xl" />
             </div>
         </div>
     </div>
