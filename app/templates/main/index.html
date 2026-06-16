@@ -54,7 +54,7 @@
                         <span class="text-lg"><i class="fas fa-envelope"></i></span>
                         <span class="font-medium">talhanadeem718@gmail.com</span>
                     </div>
-                    <a href="mailto:talhanadeem718@gmail.com" class="popup-action" aria-label="Email"><i
+                    <a href="mailto:talhanadeem718@gmail.com" class="popup-action" aria-label="Email" target="_blank" rel="noopener noreferrer"><i
                             class="fas fa-paper-plane"></i></a>
                 </div>
                 <div
@@ -64,10 +64,10 @@
                         <span class="font-medium">+92 308 7399210</span>
                     </div>
                     <div class="flex items-center gap-2">
-                        <a href="tel:+923087399210" class="popup-action" aria-label="Call"><i
+                        <a href="tel:+923087399210" class="popup-action" aria-label="Call" target="_blank" rel="noopener noreferrer"><i
                                 class="fas fa-phone-alt"></i></a>
-                        <a href="https://wa.me/923087399210" target="_blank" class="popup-action"
-                            aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/923087399210"  target="_blank" class="popup-action"
+                            aria-label="WhatsApp" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
@@ -105,7 +105,7 @@
                 <div class="mt-8">
                     <a href="https://drive.google.com/uc?id=1xGyoot87VdWnPb9BY3LcVIobTuskqszY"
                         class="inline-flex items-center justify-center px-5 py-3 rounded-full bg-[var(--button)] text-white font-semibold shadow-lg ring-1 ring-[var(--button)] hover:bg-[var(--button-hover)] transition-all duration-300 focus:outline-none focus-visible:ring-2 text-sm sm:text-base"
-                        aria-label="Download CV">
+                        aria-label="Download CV" target="_blank" rel="noopener noreferrer">
                         Resume <i class="fas fa-download ml-2"></i>
                     </a>
                 </div>
@@ -186,18 +186,7 @@
                         </div>
                     </div>
 
-                    <!-- <div class="flex gap-4">
-                        <div class="flex-shrink-0">
-                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-purple-500/10 text-purple-500">
-                                <i class="fas fa-database text-xl"></i>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-[var(--text)] mb-2">Data-Driven Solutions</h3>
-                            <p class="text-[var(--muted)] text-base leading-relaxed">
-                                From cleaning messy datasets to designing comprehensive dashboards, I ensure your data tells a compelling story that drives real business decisions.
-                            </p>
-                        </div> -->
+                   
                     </div>
                 </div>
             </div>
@@ -497,8 +486,8 @@
 
                                 <div class="mt-auto pt-6 w-full flex justify-start">
                                     {% if testimonial.t_linkedin %}
-                                    <a href="{{ testimonial.t_linkedin }}" target="_blank"
-                                        class="flex items-center gap-2 text-sm font-bold text-[#0077b5] hover:opacity-80 transition-opacity">
+                                    <a href="{{ testimonial.t_linkedin }}"  target="_blank"
+                                        class="flex items-center gap-2 text-sm font-bold text-[#0077b5] hover:opacity-80 transition-opacity" rel="noopener noreferrer">
                                         <i class="fa-brands fa-linkedin text-lg"></i>
                                         Connect
                                     </a>
@@ -549,7 +538,7 @@
 
         <div class="mt-16 text-center">
             <a href="{{url_for('main.testimonial')}}"
-                class="group relative inline-flex items-center gap-3 px-8 py-4 bg-[var(--button)] text-white rounded-full font-bold overflow-hidden transition-all hover:pr-12">
+                class="group relative inline-flex items-center gap-3 px-8 py-4 bg-[var(--button)] text-white rounded-full font-bold overflow-hidden transition-all hover:pr-12" target="_blank" rel="noopener noreferrer">
                 <span class="relative z-10">Share Your Experience</span>
                 <i
                     class="fa-solid fa-arrow-right absolute right-4 opacity-0 group-hover:opacity-100 transition-all"></i>
