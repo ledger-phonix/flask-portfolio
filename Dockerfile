@@ -20,5 +20,6 @@ COPY . /app/
 # Step 7: Expose the port Flask will run on (5000 is standard)
 EXPOSE 5000
 
+
 # Step 8: Define the command to run your app using Gunicorn (Production Server)
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "run:app"]
+CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:$PORT run:app"]
