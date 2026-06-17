@@ -15,23 +15,32 @@
     <link rel="preload" href="{{ url_for('static', filename='css/tailwind-built.css') }}" as="style">
     <link rel="preload" href="{{ url_for('static', filename='css/style.css') }}" as="style">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/tailwind-built.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     {% block preload_images %}{% endblock %}
 
     <title>{% block title %}Talha Nadeem | Python Developer & Data Analyst{% endblock %}</title>
-    <meta name="description" content="{% block meta_description %}Welcome to my personal portfolio. I am Talha Nadeem, Python developer specializing in fast Flask applications, data automation, and clear business intelligence dashboards.{% endblock %}">
-    <meta name="keywords" content="Talha Nadeem, Python Developer, Data Analyst, Flask Portfolio, Web App Development, Automation, Tailwind CSS, SQL, talha nadeem web developer, multan punjab pakistan, MySQL">
+    <meta name="description"
+        content="{% block meta_description %}Welcome to my personal portfolio. I am Talha Nadeem, Python developer specializing in fast Flask applications, data automation, and clear business intelligence dashboards.{% endblock %}">
+    <meta name="keywords"
+        content="Talha Nadeem, Python Developer, Data Analyst, Flask Portfolio, Web App Development, Automation, Tailwind CSS, SQL, talha nadeem web developer, multan punjab pakistan, MySQL">
     <meta name="author" content="Talha Nadeem">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{% block og_title %}Talha Nadeem | Python Developer & Data Analyst{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}Build faster, smarter applications with Talha Nadeem. Expert in Flask, Python automation, and business-ready dashboards.{% endblock %}">
+    <meta property="og:title"
+        content="{% block og_title %}Talha Nadeem | Python Developer & Data Analyst{% endblock %}">
+    <meta property="og:description"
+        content="{% block og_description %}Build faster, smarter applications with Talha Nadeem. Expert in Flask, Python automation, and business-ready dashboards.{% endblock %}">
     <meta property="og:url" content="{{ request.url }}">
-    <meta property="og:image" content="{% block og_image %}{{ url_for('static', filename='img/talha-hero4.png', _external=True) }}{% endblock %}">
+    <meta property="og:image"
+        content="{% block og_image %}{{ url_for('static', filename='img/talha-hero4.png', _external=True) }}{% endblock %}">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{% block twitter_title %}Talha Nadeem | Python Developer & Data Analyst{% endblock %}">
-    <meta name="twitter:description" content="{% block twitter_description %}Build faster, smarter applications with Talha Nadeem. Expert in Flask, Python automation, and business-ready dashboards.{% endblock %}">
-    <meta name="twitter:image" content="{% block twitter_image %}{{ url_for('static', filename='img/talha-hero4.png', _external=True) }}{% endblock %}">
+    <meta name="twitter:title"
+        content="{% block twitter_title %}Talha Nadeem | Python Developer & Data Analyst{% endblock %}">
+    <meta name="twitter:description"
+        content="{% block twitter_description %}Build faster, smarter applications with Talha Nadeem. Expert in Flask, Python automation, and business-ready dashboards.{% endblock %}">
+    <meta name="twitter:image"
+        content="{% block twitter_image %}{{ url_for('static', filename='img/talha-hero4.png', _external=True) }}{% endblock %}">
 </head>
 
 <body class="bg-[var(--bg)] text-[var(--text)] transition-colors duration-300">
@@ -42,7 +51,8 @@
 
                 <!-- Logo -->
                 <div class="flex-shrink-0">
-                    <a href="{{ url_for('main.index') }}" class="block hover:opacity-80 transition-opacity" target="_blank" rel="noopener noreferrer">
+                    <a href="{{ url_for('main.index') }}" class="block hover:opacity-80 transition-opacity"
+                        target="_blank" rel="noopener noreferrer">
                         <img src="{{ url_for('static', filename='img/portfolio-logo.png') }}"
                             alt="Talha-Nadeem-Portfolio-Logo" class="h-12 w-auto">
                     </a>
@@ -52,23 +62,27 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="{{url_for('main.index')}}"
-                            class="nav-link px-3 py-2 text-base font-medium transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+                            class="nav-link px-3 py-2 text-base font-medium transition-colors duration-300"
+                            target="_blank" rel="noopener noreferrer">
                             Home
                             <span class="nav-underline"></span>
                         </a>
 
                         <a href="{{url_for('main.projects')}}"
-                            class="nav-link px-3 py-2 text-base font-medium transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+                            class="nav-link px-3 py-2 text-base font-medium transition-colors duration-300"
+                            target="_blank" rel="noopener noreferrer">
                             Projects
                             <span class="nav-underline"></span>
                         </a>
                         <a href="{{url_for('main.blog')}}"
-                            class="nav-link px-3 py-2 text-base font-medium transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+                            class="nav-link px-3 py-2 text-base font-medium transition-colors duration-300"
+                            target="_blank" rel="noopener noreferrer">
                             Blog
                             <span class="nav-underline"></span>
                         </a>
                         <a href="{{url_for('main.contact')}}"
-                            class="nav-link px-3 py-2 text-base font-medium transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+                            class="nav-link px-3 py-2 text-base font-medium transition-colors duration-300"
+                            target="_blank" rel="noopener noreferrer">
                             Contact
                             <span class="nav-underline"></span>
                         </a>
@@ -110,20 +124,24 @@
             <!-- Menu Items -->
             <div class="mt-8 space-y-4">
                 <a href="{{url_for('main.index')}}"
-                    class="block px-4 py-3 rounded-lg text-lg font-medium hover:bg-[var(--button)] hover:text-white transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+                    class="block px-4 py-3 rounded-lg text-lg font-medium hover:bg-[var(--button)] hover:text-white transition-colors duration-300"
+                    target="_blank" rel="noopener noreferrer">
                     Home
                 </a>
 
                 <a href="{{url_for ('main.projects')}}"
-                    class="block px-4 py-3 rounded-lg text-lg font-medium hover:bg-[var(--button)] hover:text-white transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+                    class="block px-4 py-3 rounded-lg text-lg font-medium hover:bg-[var(--button)] hover:text-white transition-colors duration-300"
+                    target="_blank" rel="noopener noreferrer">
                     Projects
                 </a>
                 <a href="{{url_for('main.blog')}}"
-                    class="block px-4 py-3 rounded-lg text-lg font-medium hover:bg-[var(--button)] hover:text-white transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+                    class="block px-4 py-3 rounded-lg text-lg font-medium hover:bg-[var(--button)] hover:text-white transition-colors duration-300"
+                    target="_blank" rel="noopener noreferrer">
                     Blog
                 </a>
                 <a href="{{url_for('main.contact')}}"
-                    class="block px-4 py-3 rounded-lg text-lg font-medium hover:bg-[var(--button)] hover:text-white transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+                    class="block px-4 py-3 rounded-lg text-lg font-medium hover:bg-[var(--button)] hover:text-white transition-colors duration-300"
+                    target="_blank" rel="noopener noreferrer">
                     Contact
                 </a>
             </div>
@@ -131,19 +149,19 @@
             <!-- Social Icons -->
             <div class="absolute mt-8 left-0 right-0 px-4">
                 <div class="flex items-center justify-center space-x-6">
-                    <a href="https://www.linkedin.com/in/talha-nadeem-python-developer/"  target="_blank"
-                         rel="noopener noreferrer" class="social-icon linkedin">
+                    <a href="https://www.linkedin.com/in/talha-nadeem-python-developer/" target="_blank"
+                        rel="noopener noreferrer" class="social-icon linkedin">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://www.facebook.com/talha.nadeem.412"  target="_blank"  rel="noopener noreferrer"
+                    <a href="https://www.facebook.com/talha.nadeem.412" target="_blank" rel="noopener noreferrer"
                         class="social-icon facebook">
                         <i class="fab fa-facebook"></i>
                     </a>
-                    <a href="https://discord.com/users/1062455777308200992"  target="_blank"  rel="noopener noreferrer"
+                    <a href="https://discord.com/users/1062455777308200992" target="_blank" rel="noopener noreferrer"
                         class="social-icon facebook">
                         <i class="fab fa-discord"></i>
                     </a>
-                    <a href="https://www.github.com/ledger-phonix"  target="_blank"  rel="noopener noreferrer"
+                    <a href="https://www.github.com/ledger-phonix" target="_blank" rel="noopener noreferrer"
                         class="social-icon facebook">
                         <i class="fab fa-github"></i>
                     </a>
@@ -170,6 +188,63 @@
         {% endfor %}
         {% endif %}
         {% endwith %}
+    </div>
+    <!-- ================= CHATBOT FLOATING WIDGET ================= -->
+    <div id="chat-widget-root" class="chat-widget-root font-sans">
+
+        <!-- 1. The Toggle Button (Floating Icon) -->
+        <button id="chat-toggle-btn"
+            class="chat-toggle-btn w-14 h-14 bg-[#1e293b] hover:bg-slate-700 text-white rounded-full flex items-center justify-center shadow-2xl border border-slate-700 transition-all duration-300 transform hover:scale-105 focus:outline-none">
+            <!-- Default Chat Icon -->
+            <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+                </path>
+            </svg>
+            <!-- Close "X" Icon (Hidden Initially) -->
+            <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+
+        <!-- 2. The Floating Chat Box Window (Hidden Initially) -->
+        <div id="chat-window"
+            class="chat-window hidden bg-[#1e293b] border border-slate-700 rounded-2xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300">
+
+            <!-- Header Section -->
+            <div class="p-4 bg-slate-800 border-b border-slate-700 flex items-center justify-between">
+                <div>
+                    <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+                        Talha's Portfolio AI
+                    </h3>
+                    <p class="text-[11px] text-slate-400">Ask me about Talha's skills & projects</p>
+                </div>
+            </div>
+
+            <!-- Chat Logs Stream Area -->
+            <div id="chat-logs" class="chat-logs flex-1 min-h-0 p-4 space-y-3 text-sm text-slate-200">
+                <!-- Bot Initial Greeting -->
+                <div
+                    class="flex flex-col items-start max-w-[85%] bg-slate-800 rounded-2xl rounded-tl-none p-3 border border-slate-700">
+                    <p>Hi there! 👋 I'm Talha's assistant. Ask me anything about his full-stack apps, skills, or
+                        analytical work!</p>
+                </div>
+            </div>
+
+            <!-- Message Input Field Form -->
+            <form id="chat-form" class="p-3 bg-slate-800/50 border-t border-slate-700 flex gap-2">
+                <input type="text" id="chat-input" placeholder="Type a message..." required autocomplete="off"
+                    class="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-slate-500">
+                <button type="submit"
+                    class="bg-slate-700 hover:bg-slate-600 text-white rounded-xl px-4 transition-colors">
+                    <svg class="w-4 h-4 transform rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                </button>
+            </form>
+        </div>
     </div>
     <main id="main-content" class="min-h-screen">
         {% block content %}{% endblock %}
@@ -205,16 +280,20 @@
                     <div class="flex justify-center gap-4 text-[var(--text)]">
                         <a href="https://www.linkedin.com/in/talha-nadeem-python-developer/"
                             class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border)] bg-[var(--bg)] hover:bg-[var(--button)] hover:text-white transition-colors"
-                            aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                            aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i
+                                class="fab fa-linkedin-in"></i></a>
                         <a href="https://github.com/ledger-phonix"
                             class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border)] bg-[var(--bg)] hover:bg-[var(--button)] hover:text-white transition-colors"
-                            aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i
+                                class="fab fa-github"></i></a>
                         <a href="https://discord.com/users/1062455777308200992"
                             class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border)] bg-[var(--bg)] hover:bg-[var(--button)] hover:text-white transition-colors"
-                            aria-label="Discord" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i></a>
+                            aria-label="Discord" target="_blank" rel="noopener noreferrer"><i
+                                class="fab fa-discord"></i></a>
                         <a href="https://www.facebook.com/talha.nadeem.412/"
                             class="inline-flex items-center justify-center w-10 h-10 rounded-full border border-[var(--border)] bg-[var(--bg)] hover:bg-[var(--button)] hover:text-white transition-colors"
-                            aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                            aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i
+                                class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>

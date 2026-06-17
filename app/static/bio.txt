@@ -1,0 +1,454 @@
+
+ TALHA NADEEM - PROFESSIONAL PROFILE
+
+ BASIC INFORMATION
+
+Full Name: Talha Nadeem
+
+Location: Multan, Punjab, Pakistan
+
+Profession: Python Backend Developer | Flask Developer | Information Technology Student
+
+Education Status: Bachelor of Science in Information Technology (BSIT), University of Education Lahore – Multan Campus
+
+Expected Graduation: 2026
+
+Current Focus Areas:
+
+ Python Backend Development
+ Flask Web Development
+ REST API Development
+ AI-Powered Applications
+ Retrieval-Augmented Generation (RAG)
+ Chatbot Development
+ Automation Engineering
+ Database Systems
+ Software Engineering
+
+Career Objective:
+Talha aims to build a successful career as a Python Backend Engineer and Software Developer by contributing to real-world applications, learning modern backend technologies, and working alongside experienced developers. He actively seeks internships, freelance projects, remote jobs, on-site opportunities, mentorship, and collaborative software projects.
+
+
+
+ CONTACT INFORMATION
+
+Email: talhanadeem718@gmail.com
+
+Phone: +92 308 7399210
+
+LinkedIn:
+https://www.linkedin.com/in/talha-nadeem-python-developer/
+
+GitHub:
+https://github.com/ledger-phonix/
+
+Portfolio Website:
+https://talhanadeem.onrender.com/
+
+TechNest Project:
+https://technest-sz4l.onrender.com/
+
+Upwork:
+https://upwork.com/freelancers/talhan55
+
+Fiverr:
+https://www.fiverr.com/sellers/ledger_phonix/edit
+
+
+
+ PROFESSIONAL SUMMARY
+
+Talha Nadeem is a Python Backend Developer and Information Technology student with experience in building Flask-based web applications, automation systems, data-driven projects, and cloud-hosted software solutions.
+
+His expertise includes backend application development, database integration, API development, automation scripting, and deployment of web applications. He combines software engineering fundamentals with practical project experience gained through academic projects, personal initiatives, and professional internship work.
+
+Talha has a strong interest in Artificial Intelligence, Retrieval-Augmented Generation (RAG) systems, chatbot development, and automation technologies. He continuously explores emerging technologies and actively works on expanding his expertise in modern backend engineering practices.
+
+
+
+ EDUCATION
+
+ Bachelor of Science in Information Technology (BSIT)
+
+University of Education Lahore – Multan Campus
+
+Status:
+Currently Enrolled
+
+Expected Graduation:
+2026
+
+Major Areas of Study:
+
+ Software Engineering
+ Database Systems
+ Web Development
+ Computer Networks
+ Data Structures and Algorithms
+ Information Systems
+
+ Associate Degree Program (ADP) in Computer Studies
+
+Completed prior to BSIT admission.
+
+
+
+ CORE TECHNICAL SKILLS
+
+ Backend Development
+
+ Python
+ Flask
+ REST API Development
+ Object-Oriented Programming (OOP)
+ Authentication Systems
+ Session Management
+ CRUD Applications
+ MVC Application Structure
+ Jinja2 Templates
+
+ Frontend Development
+
+ HTML5
+ CSS3
+ Tailwind CSS
+ JavaScript
+ Responsive Web Design
+
+ Database Technologies
+
+ SQL
+ MySQL
+ MongoDB
+ Database Design
+ Query Writing
+ Data Modeling Fundamentals
+
+ Data Analytics & Visualization
+
+ Power BI
+ Tableau
+ Microsoft Excel
+ Power Query
+ Data Cleaning
+ Dashboard Development
+ Data Visualization
+
+ Automation & Web Scraping
+
+ Python Automation
+ BeautifulSoup
+ Requests
+ HTTPX
+ Selectolax
+ Data Collection Pipelines
+ Web Data Extraction
+
+ DevOps & Development Tools
+
+ Git
+ GitHub
+ Docker
+ Render
+ Google Search Console
+ Virtual Environments
+ Linux Fundamentals
+
+ Artificial Intelligence & Emerging Technologies
+
+Current Learning Areas:
+
+ AI Application Development
+ Retrieval-Augmented Generation (RAG)
+ AI Chatbots
+ LLM Integrations
+ Prompt Engineering
+ AI-Assisted Workflows
+
+Currently Exploring:
+
+ FastAPI
+ Modern AI Frameworks
+ Advanced Backend Architecture
+
+
+
+ PROJECTS
+
+ 1. TechNest (Final Year Project)
+
+TechNest is Talha's flagship software project and final-year university project.
+
+Project Type:
+Talent Discovery and Job Opportunity Platform
+
+Technology Stack:
+
+ Python
+ Flask
+ MySQL
+ HTML
+ CSS
+ JavaScript
+
+Key Features:
+
+ User Authentication
+ Job Posting System
+ Talent Profiles
+ Database Management
+ Automated Environment Setup
+ Deployment and Hosting
+
+Highlights:
+
+ Designed full backend architecture
+ Implemented database-driven workflows
+ Automated development environment setup using batch scripts
+ Built scalable application structure
+
+Project URL:
+https://technest-sz4l.onrender.com/
+
+
+
+ 2. Personal Portfolio Website
+
+A professional portfolio website showcasing skills, projects, certifications, and experience.
+
+Technology Stack:
+
+ Flask
+ HTML
+ CSS
+ JavaScript
+
+Highlights:
+
+ Responsive Design
+ Search Engine Optimization
+ Google Search Console Integration
+ Cloud Deployment on Render
+
+Portfolio URL:
+https://talhanadeem.onrender.com/
+
+
+
+ 3. Airbnb Data Visualization Dashboard
+
+Created using Tableau.
+
+Objectives:
+
+ Analyze Airbnb rental data
+ Visualize pricing trends
+ Generate business insights
+ Present interactive dashboards
+
+Skills Demonstrated:
+
+ Data Analysis
+ Tableau Visualization
+ Business Intelligence
+
+
+
+ 4. Customer Churn Prediction Analysis
+
+Machine Learning project focused on customer retention prediction.
+
+Objectives:
+
+ Predict customer churn
+ Analyze customer behavior
+ Support business decision-making
+
+Skills Demonstrated:
+
+ Data Preparation
+ Machine Learning Fundamentals
+ Predictive Analytics
+
+
+
+ 5. Automation and Data Processing Projects
+
+Talha has built various automation utilities and data-processing solutions involving:
+
+ Python Scripting
+ Web Scraping
+ Data Extraction
+ Report Generation
+ Workflow Automation
+
+
+
+ PROFESSIONAL EXPERIENCE
+
+ Data Science Intern
+
+DevelopersHub.co
+
+Duration:
+November 2025 – December 2025
+
+Responsibilities:
+
+ Customer Segmentation
+ Predictive Analysis
+ Data Cleaning
+ Data Preparation
+ Dashboard Development
+ Business Insight Generation
+
+Skills Applied:
+
+ Python
+ Data Analytics
+ Machine Learning Fundamentals
+ Data Visualization
+
+
+
+ CERTIFICATIONS
+
+ Data Science Internship Certificate
+
+DevelopersHub.co
+
+ Cyber Security Certification
+
+NAVTTC (2022)
+
+ Start Writing Prompts Like a Pro
+
+Google via Coursera (2025)
+
+ SQL Learning Certifications
+
+Udacity
+
+ Tableau Learning Certifications
+
+Additional self-paced learning certificates in software development, analytics, and emerging technologies.
+
+
+
+ FREELANCE SERVICES
+
+Talha provides entry-level to intermediate freelance services through Upwork and Fiverr.
+
+Services Offered:
+
+Backend Development:
+
+ Flask Web Applications
+ Python Backend Systems
+ REST APIs
+ Authentication Systems
+
+Database Solutions:
+
+ SQL Database Design
+ MySQL Integration
+ MongoDB Integration
+ CRUD Operations
+
+Automation:
+
+ Python Automation Scripts
+ Data Collection Tools
+ Workflow Automation
+
+Web Scraping:
+
+ BeautifulSoup Scrapers
+ Requests-Based Scrapers
+ Structured Data Extraction
+
+Data Analytics:
+
+ Dashboard Development
+ Data Cleaning
+ Reporting Solutions
+
+
+
+ WORK PREFERENCES
+
+Open To:
+
+ Remote Jobs
+ On-Site Jobs
+ Hybrid Roles
+ Internships
+ Freelance Projects
+ Contract Work
+ Mentorship Opportunities
+
+Preferred Roles:
+
+ Python Backend Developer
+ Flask Developer
+ Software Engineer
+ Backend Engineer
+ Junior Python Developer
+ Automation Engineer
+ AI Application Developer
+
+
+
+ PROFESSIONAL STRENGTHS
+
+ Strong self-learning ability
+ Practical project-building mindset
+ Consistent skill improvement
+ Problem-solving approach
+ Curiosity for emerging technologies
+ Focus on real-world software solutions
+ Adaptability to new tools and frameworks
+
+
+
+ INTERESTS
+
+Professional Interests:
+
+ Backend Engineering
+ Artificial Intelligence
+ Retrieval-Augmented Generation (RAG)
+ Chatbot Development
+ Software Architecture
+ Automation Systems
+ Cloud Technologies
+ Developer Productivity
+
+Personal Development Interests:
+
+ Continuous Learning
+ Technical Mentorship
+ Open Source Exploration
+ Technology Communities
+
+
+
+ FAQ ABOUT TALHA NADEEM
+
+Q: Who is Talha Nadeem?
+A: Talha Nadeem is a Python Backend Developer, Flask Developer, and BSIT student from Multan, Pakistan.
+
+Q: What technologies does Talha specialize in?
+A: Python, Flask, SQL, MySQL, MongoDB, Docker, Power BI, Tableau, web scraping, and automation.
+
+Q: What is Talha currently learning?
+A: FastAPI, AI applications, Retrieval-Augmented Generation (RAG), chatbot development, and modern backend technologies.
+
+Q: Is Talha available for work?
+A: Yes. Talha is actively seeking internships, remote jobs, on-site opportunities, freelance projects, mentorship, and collaborative software development opportunities.
+
+Q: What is Talha's flagship project?
+A: TechNest, a Flask-based talent discovery and job opportunity platform developed as a final-year project.
+
+Q: What are Talha's long-term goals?
+A: To become a highly skilled Python Backend Engineer, contribute to impactful software products, and build scalable technology solutions powered by modern software engineering and AI technologies.

@@ -1,7 +1,8 @@
 import cloudinary.uploader
-from flask import render_template , Blueprint, request, flash, redirect, url_for, send_from_directory
+from flask import render_template , Blueprint, request, flash, redirect, url_for, send_from_directory, jsonify
 from .mail_utils import send_email
 from .database import db_handler
+from .chatbot import get_bot_response
 import os
 main = Blueprint('main',__name__)
 
@@ -96,3 +97,28 @@ def projects():
 @main.route('/blog')
 def blog():
     return render_template('main/blog.html')
+
+
+@main.route('/api/chat', methods=['POST'])
+def chat_api():
+    """
+    Asynchronous endpoint for handling incoming user chat queries.
+    Expects JSON data: {"message": "User's question here"}
+    """
+    # 1. Safely extract the JSON payload from the request
+    data = request.get_json()
+    
+    # 2. Validation: Ensure a payload and message exist
+    if not data or 'message' not in data:
+        return jsonify({"error": "Invalid request framework. 'message' key missing."}), 400
+        
+    user_message = data['message'].strip()
+    
+    if not user_message:
+        return jsonify({"error": "Empty message string received."}), 400
+
+    # 3. Process the question using our Gemini function
+    bot_reply = get_bot_response(user_message)
+
+    # 4. Return the clean text reply back to the frontend browser as JSON
+    return jsonify({"reply": bot_reply})

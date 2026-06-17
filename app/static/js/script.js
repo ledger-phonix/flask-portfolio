@@ -491,3 +491,89 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize first slide
     updateSlider(0);
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('chat-toggle-btn');
+    const chatWindow = document.getElementById('chat-window');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+    const chatForm = document.getElementById('chat-form');
+    const chatInput = document.getElementById('chat-input');
+    const chatLogs = document.getElementById('chat-logs');
+
+    // 1. Toggle Chat Window Drawer View
+    toggleBtn.addEventListener('click', () => {
+        const isHidden = chatWindow.classList.contains('hidden');
+
+        chatWindow.classList.toggle('hidden', !isHidden);
+        iconOpen.classList.toggle('hidden', isHidden);
+        iconClose.classList.toggle('hidden', !isHidden);
+
+        if (isHidden) {
+            requestAnimationFrame(() => scrollToBottom());
+        }
+    });
+
+    // 2. Form Submission Handler (Send Message to API)
+    chatForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const userMsg = chatInput.value.trim();
+        if (!userMsg) return;
+
+        // Render User Bubble
+        appendBubble(userMsg, 'user');
+        chatInput.value = '';
+
+        // Render Loading Indicator Placeholder
+        const loadingId = appendBubble('Thinking...', 'bot-loading');
+
+        try {
+            // POST request to our Flask route endpoint
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: userMsg })
+            });
+            const data = await response.json();
+            
+            // Remove Loading bubble & append final Gemini reply
+            document.getElementById(loadingId).remove();
+            appendBubble(data.reply || "I am currently hitting technical friction.", 'bot');
+
+        } catch (error) {
+            document.getElementById(loadingId).remove();
+            appendBubble("Network connectivity pipeline dropped. Try again.", 'bot');
+        }
+    });
+
+    // Helper: Build and append message containers cleanly
+    function appendBubble(text, sender) {
+        const id = 'bubble-' + Date.now();
+        const bubble = document.createElement('div');
+        bubble.id = id;
+        
+        if (sender === 'user') {
+            bubble.className = "ml-auto max-w-[85%] bg-slate-700 text-white rounded-2xl rounded-tr-none p-3 shadow-md border border-slate-600 self-end text-right";
+            bubble.innerHTML = `<p class="text-left">${text}</p>`;
+        } else if (sender === 'bot-loading') {
+            bubble.className = "flex flex-col items-start max-w-[85%] bg-slate-800 rounded-2xl rounded-tl-none p-3 border border-slate-700 text-slate-400 italic animate-pulse";
+            bubble.innerHTML = `<p>${text}</p>`;
+        } else {
+            bubble.className = "flex flex-col items-start max-w-[85%] bg-slate-800 rounded-2xl rounded-tl-none p-3 border border-slate-700 shadow-md";
+            bubble.innerHTML = `<p>${text}</p>`;
+        }
+
+        chatLogs.appendChild(bubble);
+        scrollToBottom();
+        return id;
+    }
+
+    function scrollToBottom() {
+        if (!chatLogs) return;
+        chatLogs.scrollTo({
+            top: chatLogs.scrollHeight,
+            behavior: 'smooth'
+        });
+    }
+});

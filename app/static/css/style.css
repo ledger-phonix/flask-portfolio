@@ -134,6 +134,70 @@ html[data-theme="dark"] #theme-toggle {
   transform: translateX(0);
 }
 
+.chat-widget-root {
+  position: fixed !important;
+  right: 1rem !important;
+  bottom: 1rem !important;
+  z-index: 9999 !important;
+  width: auto !important;
+  max-width: calc(100vw - 1rem) !important;
+}
+
+.chat-toggle-btn {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.chat-window {
+  position: absolute !important;
+  right: 0 !important;
+  bottom: calc(100% + 0.75rem) !important;
+  width: min(22rem, calc(100vw - 1rem)) !important;
+  height: 16rem !important;
+  max-height: calc(100dvh - 8rem) !important;
+  display: flex !important;
+  z-index: 1 !important;
+}
+
+.chat-window.hidden {
+  display: none !important;
+}
+
+.chat-logs {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  scrollbar-width: thin;
+  scrollbar-color: #64748b #0f172a;
+}
+
+.chat-logs::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-logs::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+.chat-logs::-webkit-scrollbar-thumb {
+  background: #64748b;
+  border-radius: 999px;
+}
+
+#chat-logs::-webkit-scrollbar {
+  width: 8px;
+}
+
+#chat-logs::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+#chat-logs::-webkit-scrollbar-thumb {
+  background: #64748b;
+  border-radius: 999px;
+}
+
 /* Hamburger menu button */
 #hamburger {
   color: var(--text);

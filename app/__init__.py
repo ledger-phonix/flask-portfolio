@@ -18,6 +18,7 @@ def create_app():
     app.config['MAIL_USERNAME'] = os.getenv("MAIL_USERNAME")
     app.config['MAIL_PASSWORD'] = os.getenv("MAIL_PASSWORD")
     app.config['MY_PERSONAL_EMAIL'] = os.getenv("MAIL_PERSONAL")
+    app.config['API_KEY'] = os.getenv("GEMINI_API_KEY")
     
     mail.init_app(app)
     
