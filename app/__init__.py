@@ -4,6 +4,7 @@ import cloudinary
 from .database import db_handler
 import os
 from dotenv import load_dotenv
+
 mail = Mail()
 load_dotenv()
 
@@ -18,7 +19,12 @@ def create_app():
     app.config['MAIL_USERNAME'] = os.getenv("MAIL_USERNAME")
     app.config['MAIL_PASSWORD'] = os.getenv("MAIL_PASSWORD")
     app.config['MY_PERSONAL_EMAIL'] = os.getenv("MAIL_PERSONAL")
-    app.config['API_KEY'] = os.getenv("GEMINI_API_KEY")
+    app.config['API_KEY'] = (
+        os.getenv("GEMINI_API_KEY")
+        or os.getenv("GOOGLE_API_KEY")
+        or os.getenv("GOOGLE_GENAI_API_KEY")
+    )
+    app.config['GEMINI_API_KEY'] = app.config['API_KEY']
     
     mail.init_app(app)
     
@@ -38,6 +44,7 @@ def create_app():
     
     from .routes import main
     from .admin_routes import admin
+    
     
     app.register_blueprint(main)
     app.register_blueprint(admin , url_prefix='/admin')

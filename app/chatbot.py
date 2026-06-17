@@ -1,18 +1,21 @@
 import os
 from google import genai
 from google.genai import types
-from dotenv import load_dotenv
-load_dotenv()
-# 1. Fetch the environment variable explicitly from the OS layer
-api_key = os.environ.get("GEMINI_API_KEY")
 
-# 2. Add a graceful fallback so it doesn't crash your entire server on boot
-if not api_key:
-    print("WARNING: GEMINI_API_KEY environment variable is missing!")
-    client = None
+
+api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY") or os.getenv("GOOGLE_GENAI_API_KEY")
+
+if api_key:
+    try:
+        client = genai.Client(api_key=api_key)
+    except Exception as e:
+        print(f"WARNING: Gemini client could not be initialized: {e}")
+        client = None
 else:
-    # Pass the key directly into the client initialization constructor
-    client = genai.Client(api_key=api_key)
+    print(
+        "WARNING: No Gemini API key found. Set GEMINI_API_KEY or GOOGLE_API_KEY in your environment."
+    )
+    client = None
 
 
 def get_bot_response(user_question):
