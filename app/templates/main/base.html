@@ -2,45 +2,25 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#111827">
-    <link rel="canonical" href="{{ request.url }}">
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/portfolio-logo.png') }}">
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <meta charset="UTF-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/portfolio-logo.png') }}">  
     <meta name="google-site-verification" content="yuG3J5dzNmk-DwI69_AXeyk6jPh5f3sY4mSRQitjCYg" />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <!-- <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preload" href="{{ url_for('static', filename='css/tailwind-built.css') }}" as="style">
-    <link rel="preload" href="{{ url_for('static', filename='css/style.css') }}" as="style">
+    <link rel="preload" href="{{ url_for('static', filename='css/style.css') }}" as="style"> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/tailwind-built.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    {% block preload_images %}{% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">  
 
     <title>{% block title %}Talha Nadeem | Python Developer & Data Analyst{% endblock %}</title>
     <meta name="description"
-        content="{% block meta_description %}Welcome to my personal portfolio. I am Talha Nadeem, Python developer specializing in fast Flask applications, data automation, and clear business intelligence dashboards.{% endblock %}">
+        content="Welcome to my personal portfolio. I am Talha Nadeem, Python developer specializing in fast Flask applications, data automation, and clear business intelligence dashboards.">
     <meta name="keywords"
         content="Talha Nadeem, Python Developer, Data Analyst, Flask Portfolio, Web App Development, Automation, Tailwind CSS, SQL, talha nadeem web developer, multan punjab pakistan, MySQL">
     <meta name="author" content="Talha Nadeem">
-    <meta property="og:type" content="website">
-    <meta property="og:title"
-        content="{% block og_title %}Talha Nadeem | Python Developer & Data Analyst{% endblock %}">
-    <meta property="og:description"
-        content="{% block og_description %}Build faster, smarter applications with Talha Nadeem. Expert in Flask, Python automation, and business-ready dashboards.{% endblock %}">
-    <meta property="og:url" content="{{ request.url }}">
-    <meta property="og:image"
-        content="{% block og_image %}{{ url_for('static', filename='img/talha-hero4.png', _external=True) }}{% endblock %}">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title"
-        content="{% block twitter_title %}Talha Nadeem | Python Developer & Data Analyst{% endblock %}">
-    <meta name="twitter:description"
-        content="{% block twitter_description %}Build faster, smarter applications with Talha Nadeem. Expert in Flask, Python automation, and business-ready dashboards.{% endblock %}">
-    <meta name="twitter:image"
-        content="{% block twitter_image %}{{ url_for('static', filename='img/talha-hero4.png', _external=True) }}{% endblock %}">
+       
 </head>
 
 <body class="bg-[var(--bg)] text-[var(--text)] transition-colors duration-300">
@@ -191,18 +171,18 @@
     </div>
     <!-- ================= CHATBOT FLOATING WIDGET ================= -->
     <div id="chat-widget-root" class="chat-widget-root font-sans">
-
+        
         <!-- 1. The Toggle Button (Floating Icon) -->
         <button id="chat-toggle-btn"
-            class="chat-toggle-btn w-14 h-14 bg-[#1e293b] hover:bg-slate-700 hover:cursor-pointer text-emerald-400 rounded-full flex items-center justify-center shadow-2xl border border-purple-700 transition-all duration-300 transform hover:scale-105 focus:outline-none">
+            class="chat-toggle-btn w-20 h-20 bg-[#1e293b] hover:bg-slate-700 hover:cursor-pointer text-emerald-400 rounded-full flex items-center justify-center shadow-2xl border border-[var(--button)] transition-all duration-300 transform hover:scale-105 focus:outline-none">
             <!-- Default Chat Icon -->
-            <svg id="icon-open" class="w-7 h-7 text-emerald-400 cursor-pointer" fill="none" stroke="currentColor"
+            <svg id="icon-open" class="w-14 h-14 text-[var(--button)] cursor-pointer" fill="none" stroke="currentColor"
                 stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M9 3h6M12 3v2m-4 4h8a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2v-6a2 2 0 012-2zm-2 5H4m16 0h-2M9 14h6m-5-3h.01M14 11h.01" />
             </svg>
             <!-- Close "X" Icon (Hidden Initially) -->
-            <svg id="icon-close" class="w-6 h-6 hidden text-emerald-400 cursor-pointer" fill="none"
+            <svg id="icon-close" class="w-14 h-14 hidden text-[var(--button)] cursor-pointer" fill="none"
                 stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
@@ -210,12 +190,12 @@
 
         <!-- 2. The Floating Chat Box Window (Hidden Initially) -->
         <div id="chat-window"
-            class="chat-window hidden bg-[#1e293b] border border-slate-700 rounded-2xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300">
+            class="chat-window  hidden bg-[#1e293b] border border-[var(--button)] rounded-2xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300">
 
             <!-- Header Section -->
-            <div class="p-4 bg-slate-800 border-b border-slate-700 flex items-center justify-between">
+            <div class="p-2 bg-slate-800 border-b border-slate-700 flex items-center justify-between">
                 <div>
-                    <h3 class="text-sm font-bold text-emerald-400 flex items-center gap-2">
+                    <h3 class="text-sm font-bold text-[var(--button)] flex items-center gap-2">
                         <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
                         Talha's Portfolio AI
                     </h3>
@@ -237,7 +217,7 @@
                 <input type="text" id="chat-input" placeholder="Type a message..." required autocomplete="off"
                     class="flex-1 bg-emerald-900 border border-emerald-700 rounded-xl px-3 py-2 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-slate-500">
                 <button type="submit"
-                    class=" text-emerald-400 hover:text-emerald-800 rounded-xl px-4 transition-colors">
+                    class=" text-[var(--button)]  rounded-xl px-4 transition-colors">
                     
                     <i class="fa-solid fa-paper-plane cursor-pointer"></i>
                 </button>

@@ -1,13 +1,5 @@
 {% extends "main/base.html" %}
-{% block title %}Talha Nadeem | Python Developer & Data Analyst{% endblock %}
-{% block meta_description %}Talha Nadeem is a Python developer and data analyst specializing in fast Flask applications, automation, and business-ready dashboards.{% endblock %}
-{% block og_title %}Talha Nadeem | Python Developer & Data Analyst{% endblock %}
-{% block og_description %}Build smarter business apps and dashboards with Talha Nadeem — Python, Flask, and data automation expert.{% endblock %}
-{% block twitter_title %}Talha Nadeem Portfolio{% endblock %}
-{% block twitter_description %}Fast, polished Flask apps, intelligent data automation, and clean dashboards by Talha Nadeem.{% endblock %}
-{% block preload_images %}
-<link rel="preload" as="image" href="{{ url_for('static', filename='img/talha-hero4.png') }}">
-{% endblock %}
+
 {% block content %}
 <!-- Hero Section -->
 <section class="hero relative overflow-hidden">
@@ -22,7 +14,7 @@
             </div>
             <div class="flex flex-wrap gap-2 sm:gap-4">
                 <button id="hire-me" style="margin-top: 10px;"
-                    class="btn-3d relative inline-flex items-center justify-center px-4 py-2 sm:px-6 sm:py-3 rounded-[10px] bg-[var(--button)] text-white font-semibold ring-1 ring-[var(--button)] hover:bg-[var(--button-hover)] active:translate-y-[4px] transition-all duration-100 focus:outline-none focus-visible:ring-2 text-sm sm:text-base">
+                    class="btn-3d relative inline-flex items-center justify-center px-8 py-4 sm:px-8 sm:py-3 rounded-[10px] bg-[var(--button)] text-white font-semibold ring-1 ring-[var(--button)] hover:bg-[var(--button-hover)] active:translate-y-[4px] transition-all duration-100 focus:outline-none focus-visible:ring-2 text-xl sm:text-base lg:text-lg">
                     Hire Me
                 </button>
             </div>
@@ -54,8 +46,8 @@
                         <span class="text-lg"><i class="fas fa-envelope"></i></span>
                         <span class="font-medium">talhanadeem718@gmail.com</span>
                     </div>
-                    <a href="mailto:talhanadeem718@gmail.com" class="popup-action" aria-label="Email" target="_blank" rel="noopener noreferrer"><i
-                            class="fas fa-paper-plane"></i></a>
+                    <a href="mailto:talhanadeem718@gmail.com" class="popup-action" aria-label="Email" target="_blank"
+                        rel="noopener noreferrer"><i class="fas fa-paper-plane"></i></a>
                 </div>
                 <div
                     class="contact-row flex items-center justify-between rounded-lg border border-[var(--border)] p-3 transition-all duration-300">
@@ -64,10 +56,10 @@
                         <span class="font-medium">+92 308 7399210</span>
                     </div>
                     <div class="flex items-center gap-2">
-                        <a href="tel:+923087399210" class="popup-action" aria-label="Call" target="_blank" rel="noopener noreferrer"><i
-                                class="fas fa-phone-alt"></i></a>
-                        <a href="https://wa.me/923087399210"  target="_blank" class="popup-action"
-                            aria-label="WhatsApp" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                        <a href="tel:+923087399210" class="popup-action" aria-label="Call" target="_blank"
+                            rel="noopener noreferrer"><i class="fas fa-phone-alt"></i></a>
+                        <a href="https://wa.me/923087399210" target="_blank" class="popup-action" aria-label="WhatsApp"
+                            rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
@@ -123,22 +115,30 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <!-- Left Side: Question Marks -->
-            <div class="why-me-left animate-on-scroll flex flex-col items-center lg:items-start justify-center space-y-6">
+            <div
+                class="why-me-left animate-on-scroll flex flex-col items-center lg:items-start justify-center space-y-6">
                 <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
-                    <svg class="w-20 h-20 sm:w-28 sm:h-28 text-[var(--button)] opacity-80 hover:opacity-100 transition-opacity" viewBox="0 0 100 100" fill="currentColor">
-                        <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="3"/>
-                        <text x="50" y="65" font-size="60" font-weight="bold" text-anchor="middle" font-family="Arial, sans-serif">?</text>
+                    <svg class="w-20 h-20 sm:w-28 sm:h-28 text-[var(--button)] opacity-80 hover:opacity-100 transition-opacity"
+                        viewBox="0 0 100 100" fill="currentColor">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="3" />
+                        <text x="50" y="65" font-size="60" font-weight="bold" text-anchor="middle"
+                            font-family="Arial, sans-serif">?</text>
                     </svg>
-                    <svg class="w-20 h-20 sm:w-28 sm:h-28 text-[var(--accent)] opacity-80 hover:opacity-100 transition-opacity" viewBox="0 0 100 100" fill="currentColor">
-                        <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="3"/>
-                        <text x="50" y="65" font-size="60" font-weight="bold" text-anchor="middle" font-family="Arial, sans-serif">?</text>
+                    <svg class="w-20 h-20 sm:w-28 sm:h-28 text-[var(--accent)] opacity-80 hover:opacity-100 transition-opacity"
+                        viewBox="0 0 100 100" fill="currentColor">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="3" />
+                        <text x="50" y="65" font-size="60" font-weight="bold" text-anchor="middle"
+                            font-family="Arial, sans-serif">?</text>
                     </svg>
-                    <svg class="w-20 h-20 sm:w-28 sm:h-28 text-blue-500 opacity-80 hover:opacity-100 transition-opacity" viewBox="0 0 100 100" fill="currentColor">
-                        <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="3"/>
-                        <text x="50" y="65" font-size="60" font-weight="bold" text-anchor="middle" font-family="Arial, sans-serif">?</text>
+                    <svg class="w-20 h-20 sm:w-28 sm:h-28 text-blue-500 opacity-80 hover:opacity-100 transition-opacity"
+                        viewBox="0 0 100 100" fill="currentColor">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="3" />
+                        <text x="50" y="65" font-size="60" font-weight="bold" text-anchor="middle"
+                            font-family="Arial, sans-serif">?</text>
                     </svg>
                 </div>
-                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[var(--text)] text-center lg:text-left">Why Me?</h2>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[var(--text)] text-center lg:text-left">
+                    Why Me?</h2>
             </div>
 
             <!-- Right Side: Description -->
@@ -146,51 +146,58 @@
                 <div class="space-y-6">
                     <div class="flex gap-4">
                         <div class="flex-shrink-0">
-                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-[var(--button)]/10 text-[var(--button)]">
+                            <div
+                                class="flex items-center justify-center h-12 w-12 rounded-xl bg-[var(--button)]/10 text-[var(--button)]">
                                 <i class="fas fa-code text-xl"></i>
                             </div>
                         </div>
                         <div>
                             <h3 class="text-xl font-bold text-[var(--text)] mb-2">Quality Web Development</h3>
                             <p class="text-[var(--muted)] text-base leading-relaxed">
-                                I deliver clean, maintainable, and scalable web applications built with modern best practices. Every line of code is crafted with performance and user experience in mind.
+                                I deliver clean, maintainable, and scalable web applications built with modern best
+                                practices. Every line of code is crafted with performance and user experience in mind.
                             </p>
                         </div>
                     </div>
 
                     <div class="flex gap-4">
                         <div class="flex-shrink-0">
-                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-blue-500/10 text-blue-500">
+                            <div
+                                class="flex items-center justify-center h-12 w-12 rounded-xl bg-blue-500/10 text-blue-500">
                                 <i class="fas fa-flask text-xl"></i>
                             </div>
                         </div>
                         <div>
                             <h3 class="text-xl font-bold text-[var(--text)] mb-2">Flask Expertise</h3>
                             <p class="text-[var(--muted)] text-base leading-relaxed">
-                                Specialized in building robust backend systems and APIs with Flask. I create secure, efficient server-side solutions paired with MongoDB, MySQL, or PostgreSQL for your exact needs.
+                                Specialized in building robust backend systems and APIs with Flask. I create secure,
+                                efficient server-side solutions paired with MongoDB, MySQL, or PostgreSQL for your exact
+                                needs.
                             </p>
                         </div>
                     </div>
 
                     <div class="flex gap-4">
                         <div class="flex-shrink-0">
-                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-yellow-500/10 text-yellow-600">
+                            <div
+                                class="flex items-center justify-center h-12 w-12 rounded-xl bg-yellow-500/10 text-yellow-600">
                                 <i class="fab fa-python text-xl"></i>
                             </div>
                         </div>
                         <div>
                             <h3 class="text-xl font-bold text-[var(--text)] mb-2">Custom Automation Tools</h3>
                             <p class="text-[var(--muted)] text-base leading-relaxed">
-                                I build powerful Python automation scripts to handle repetitive tasks, web scraping, data processing, and system workflows—saving you time and effort every single day.
+                                I build powerful Python automation scripts to handle repetitive tasks, web scraping,
+                                data processing, and system workflows—saving you time and effort every single day.
                             </p>
                         </div>
                     </div>
 
-                   
-                    </div>
+
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </section>
 
@@ -357,7 +364,7 @@
                     format your information so it is 100% accurate and ready for your professional use.
                 </p>
             </div>
-             
+
         </div>
     </div>
 </section>
@@ -486,8 +493,9 @@
 
                                 <div class="mt-auto pt-6 w-full flex justify-start">
                                     {% if testimonial.t_linkedin %}
-                                    <a href="{{ testimonial.t_linkedin }}"  target="_blank"
-                                        class="flex items-center gap-2 text-sm font-bold text-[#0077b5] hover:opacity-80 transition-opacity" rel="noopener noreferrer">
+                                    <a href="{{ testimonial.t_linkedin }}" target="_blank"
+                                        class="flex items-center gap-2 text-sm font-bold text-[#0077b5] hover:opacity-80 transition-opacity"
+                                        rel="noopener noreferrer">
                                         <i class="fa-brands fa-linkedin text-lg"></i>
                                         Connect
                                     </a>
@@ -538,7 +546,8 @@
 
         <div class="mt-16 text-center">
             <a href="{{url_for('main.testimonial')}}"
-                class="group relative inline-flex items-center gap-3 px-8 py-4 bg-[var(--button)] text-white rounded-full font-bold overflow-hidden transition-all hover:pr-12" target="_blank" rel="noopener noreferrer">
+                class="group relative inline-flex items-center gap-3 px-8 py-4 bg-[var(--button)] text-white rounded-full font-bold overflow-hidden transition-all hover:pr-12"
+                target="_blank" rel="noopener noreferrer">
                 <span class="relative z-10">Share Your Experience</span>
                 <i
                     class="fa-solid fa-arrow-right absolute right-4 opacity-0 group-hover:opacity-100 transition-all"></i>
