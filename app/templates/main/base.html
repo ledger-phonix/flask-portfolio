@@ -6,21 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/portfolio-logo.png') }}">  
     <meta name="google-site-verification" content="yuG3J5dzNmk-DwI69_AXeyk6jPh5f3sY4mSRQitjCYg" />
-    <!-- <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
     <link rel="preload" href="{{ url_for('static', filename='css/tailwind-built.css') }}" as="style">
-    <link rel="preload" href="{{ url_for('static', filename='css/style.css') }}" as="style"> -->
+    <link rel="preload" href="{{ url_for('static', filename='css/style.css') }}" as="style">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/tailwind-built.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">  
 
-    <title>{% block title %}Talha Nadeem | Python Developer & Data Analyst{% endblock %}</title>
-    <meta name="description"
-        content="Welcome to my personal portfolio. I am Talha Nadeem, Python developer specializing in fast Flask applications, data automation, and clear business intelligence dashboards.">
-    <meta name="keywords"
-        content="Talha Nadeem, Python Developer, Data Analyst, Flask Portfolio, Web App Development, Automation, Tailwind CSS, SQL, talha nadeem web developer, multan punjab pakistan, MySQL">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          media="print" onload="this.media='all'" crossorigin="anonymous">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <title>{% block title %}Talha Nadeem | Python & Web App Developer{% endblock %}</title>
+    <meta name="description" content="Welcome to my personal portfolio. I am Talha Nadeem, a Python Flask developer specializing in full-stack web applications, automation scripts, and custom interactive dashboards.">
+    <meta name="keywords" content="Talha Nadeem, Python Developer, Python Flask Developer, Web App Development, Automation, Tailwind CSS, SQL, talha nadeem web developer, multan punjab pakistan, MySQL, TechNest">
     <meta name="author" content="Talha Nadeem">
-       
 </head>
 
 <body class="bg-[var(--bg)] text-[var(--text)] transition-colors duration-300">
