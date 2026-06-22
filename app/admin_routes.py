@@ -61,7 +61,8 @@ def projects_form():
             'p_link' : request.form['link'],
             'p_description' : request.form['description'],
             'p_tags' : Tags,
-            'p_image' : image_url
+            'p_image' : image_url,
+            'p_category': request.form['category']
         }
         try:
             db_handler.save_projects(project_data)
