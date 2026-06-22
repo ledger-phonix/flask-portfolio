@@ -90,9 +90,9 @@ def subscribe():
              
 @main.route('/projects')
 def projects():
-    projects = db_handler.get_all_projects()
-    # print(projects)
-    return render_template('main/projects.html', all_projects = projects)
+    selected_category = request.args.get('category')    
+    projects = db_handler.get_all_projects(category=selected_category)    
+    return render_template('main/projects.html', all_projects=projects, current_category=selected_category)
 
 @main.route('/blog')
 def blog():
@@ -101,11 +101,7 @@ def blog():
 
 @main.route('/api/chat', methods=['POST'])
 def chat_api():
-    """
-    Asynchronous endpoint for handling incoming user chat queries.
-    Expects JSON data: {"message": "User's question here"}
-    """
-    # 1. Safely extract the JSON payload from the request
+      # 1. Safely extract the JSON payload from the request
     data = request.get_json()
     
     # 2. Validation: Ensure a payload and message exist

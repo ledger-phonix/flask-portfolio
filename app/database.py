@@ -79,8 +79,16 @@ class Database:
         
         return self.certificates.insert_one(data)
     
-    def get_all_projects(self):
-        projects = self.db.projects.find().sort("created_at", -1)
+    def get_all_projects(self, category=None):
+        # 1. Start with an empty query (matches all documents)
+        query = {}
+        
+        # 2. If a category is provided, add it to the query filter
+        if category:
+            query["p_category"] = category
+            
+        # 3. Find, sort by newest first, and return as a list
+        projects = self.db.projects.find(query).sort("created_at", -1)
         return list(projects)
     
     def get_all_certificates(self):
